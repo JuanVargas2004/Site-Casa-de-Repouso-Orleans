@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Marcellus';
+    src: url('fonts/Marcellus-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'Libre';
+    src: url('fonts/LibreBodoni-VariableFont_wght.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'LibreBask';
+    src: url('fonts/LibreBaskerville-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'Alef';
+    src: url('fonts/Alef-Regular.ttf')format('truetype');
+}
+
+body{
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+
+#frame1 .container{
+    position: relative;
+    margin: 0px auto;
+    width: 100%;
+}
+
+#fundo{
+    width: 100%;
+    max-height: 750px;
+}
+
+#logo{
+    position: absolute;
+    width: 219px;
+    height: 163px;
+    top: 18px;
+    left: 24px;
+}
+
+#frame1 .container nav{
+    position: absolute;
+    color: white;
+    top: 80px;
+    right: 2%;
+}
+
+#frame1 .container nav > a{
+    text-decoration: none;
+    font-family: 'LibreBask';
+    font-size: 20px;
+    color: white;
+    margin-right: 25px;
+}
+
+#frame1 .texto{
+    position: absolute;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#t1{
+    max-width: 657px;
+    font-family: 'Marcellus';
+    font-size: 50px;
+}
+
+#t2{
+    font-family: 'Libre';
+    font-size: 20px;
+    max-width: 481px;
+    margin: 0px auto;
+}
+
+h1{
+    font-family: 'LibreBask';
+    font-weight: lighter;
+    text-align: center;
+    margin: 38px 0px;
+}
+
+#p1{
+    font-family: 'Alef', Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 25px;
+    max-width: 995px;
+    margin: 0px auto 180px auto;
+}
+
+
+#frame2{
+    margin: 0px auto;
+}
+
+#frame2 h2{
+    font-family: 'LibreBask';
+    font-weight: lighter;
+}
+
+#frame2 p{
+    font-family: 'Alef';
+    text-align: center;
+    font-size: 18px;
+    max-width: 738px;
+}
+
+#frame2 .container{
+    text-align: center;
+}
+
+.texto, .imagem{
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.texto{
+    margin: 80px 64px 0px 0px;
+}
+
+.texto p{
+    margin: 0px auto;
+}
+
+#buttom-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#buttom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'LibreBask';
+    font-size: 15px;
+    color: white;
+    background-color: rgb(0, 63, 59);
+    width: 319px;
+    height: 47px;
+    border-radius: 10px;
+}
