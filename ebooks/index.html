@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../logo.ico/favicon-16x16.png" type="image/x-icon">
+    <title>E-Books</title>
+</head>
+<body>
+
+
+    <div class="menu_container" id="menu_flutuante">
+
+        <label for="fechar"><img src="midia/icone_close.png"></label>
+
+        <nav>
+            <ul>
+                <li><a href="../tela_quem_somos/quem_somos.html">Quem Somos</a></li>
+                <li><a href="../tela_nossa_casa/tela_nossa_casa.html">Nossa Casa</a></li>
+                <li><a href="../tela_servicos/tela_servicos.html">Serviços</a></li>
+                <li><a href="../tela_contatos/tela_contatos.html">Contato</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div id="overlay"></div>
+
+
+
+    <header id="header">
+        <div class="container">
+
+            <div class="flex">
+
+                <a href="../tela_inicial/tela_inicial.html"><img src="midia/logo.png" alt="Logo" id="logo"></a>
+
+                <nav id="navdesktop">
+                    <ul id="navbar">
+                        <li><a href="../tela_quem_somos/quem_somos.html" class="navitem">Quem Somos</a></li>
+                        <li><a href="../tela_nossa_casa/tela_nossa_casa.html" class="navitem">Nossa Casa</a></li>
+                        <li><a href="../tela_servicos/tela_servicos.html" class="navitem">Serviços</a></li>
+                        <li><a href="../tela_contatos/tela_contatos.html" class="navitem">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <div id="navmobile">
+                    <input type="radio" name="hamburguer" id="abrir">
+                    <input type="radio" name="hamburguer" id="fechar" checked>
+                    <label for="abrir" id="label_hamburguer"><img src="midia/icone-menu.png" id="img_hamburguer"></label>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+        <div class="texteb">
+            <h1>E-<strong>Books</strong></h1>
+        </div>
+
+        <div class="container">
+
+            <div class="container_ebook">
+                <img src="midia/ebook01.jpeg" alt="">
+
+                <div class="dowa">
+                    <div botaod1>
+                        <a href="/ebooks/midia/E-Book.01.pdf" download="Download">Download</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="container_ebook">
+                <img src="midia/ebook02.jpeg" alt="">
+
+                <div class="dowa2">
+                    <div botaod2>
+                        <a href="/ebooks/midia/E-book.02.pdf" download="Download">Download</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container_ebook">
+                <img src="midia/ebook03.jpeg" alt="">
+
+                <div class="dowa3">
+                    <div botaod3>
+                        <a href="/ebooks/midia/Ebook.03.pdf" download="Download">Download</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </main>
+
+
+
+    <script src="main.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,805 @@
+@font-face {
+    font-family: 'Marcellus';
+    src: url('../fonts/Marcellus-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'Libre';
+    src: url('../fonts/LibreBodoni-VariableFont_wght.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'LibreBask';
+    src: url('../fonts/LibreBaskerville-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'Alef';
+    src: url('../fonts/Alef-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'PlayFair';
+    src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf')format('truetype');
+}
+
+
+/* html{
+    height: 200vw;
+} */
+
+/* html{
+    zoom: .9;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header .container{
+    margin: 0;
+}
+
+header{
+    z-index: 1;
+    width: 100%;
+    /* height: 10vh; */
+    padding: 12px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+
+
+header .container img{
+    width: 4vw;
+    min-width: 30px;
+    margin-left: 6vw;
+    transition: transform 0.3s, width 0.3s;
+    filter: drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.219));
+}
+
+header .container img:hover{
+    transform: scale(1.2);
+}
+
+
+header.rolagem{
+    display: flex;
+    align-items: center;
+    /* height: 75px; */
+    height: 11vh;
+    /* min-height: 27.5px; */
+    min-height: 55px;
+    background-color: #7b994fde;
+    padding: 0;
+}
+
+
+#navbar{
+    margin-right: 4vw;
+    transition: transform .5s;
+}
+
+header ul{
+    list-style: none;
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0 2vw 0;
+}
+
+header ul li a{
+    filter: drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.247));
+    font-family: 'PlayFair';
+    font-weight: normal;
+    /* font-size: 1.2rem; */
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .5s ease, font-size .5s ease;
+}
+
+header ul li a:hover{
+    /* font-size: 1.35rem; */
+    font-size: 1.8vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+header ul li a:active{
+    color: rgb(197, 197, 197);
+}
+
+
+.banner{
+    height: 100vh;
+    width: 100%;
+    background-image: url("midia/banner_desfoque.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner .container{
+    justify-content: center;
+    max-width: 657px;
+}
+
+.banner .container h1{
+    font-family: 'Marcellus';
+    font-weight: lighter;
+    /* font-size: 3rem; */
+    /* font-size: 3.2vw; */
+    font-size: clamp(1.5rem, 3.2vw + 0.1rem, 3rem);
+    color: white;
+    filter: drop-shadow(3px 6px 2px rgba(0, 0, 0, 0.418));
+}
+
+
+.banner .container h2{
+    font-family: 'LibreBask';
+    font-weight: lighter;
+    /* font-size: 1.2rem; */
+    /* font-size: 1.4vw; */
+    font-size: clamp(0.6rem, 1.4vw + 0.1rem, 1rem);
+    color: white;
+    filter: drop-shadow(3px 6px 2px rgba(0, 0, 0, 0.418));
+
+    /* max-width: 547px; */
+    max-width: 43vw;
+    margin: 0 auto;
+}
+
+#posbanner div{
+    margin: 60px auto 80px auto;
+    text-align: center;
+    max-width: 995px;
+}
+
+#posbanner h1{
+    font-family: 'Marcellus';
+    font-weight: lighter;
+    /* font-size: 2.6em; */
+    /* font-size: 3vw; */
+    font-size: clamp(1.5rem, 3vw + 0.1rem, 3rem);
+}
+
+#posbanner p{
+    font-family: 'Alef';
+    /* font-size: 1.5em; */
+    /* font-size: 1.7vw; */
+    font-size: clamp(0.85rem, 1.7vw + 0.1rem, 1.5rem);
+}
+
+
+strong{
+    font-weight: lighter;
+    color: #7b994f;
+}
+
+#sessao{
+    margin-bottom: 200px;
+}
+
+#sessao .flex{
+    justify-content: space-around;
+}
+
+div.container-section{
+    text-align: center;
+}
+
+div.container-section img{
+    margin: 0 auto;
+    /* @media (max-width: 880px) {
+        width: 175px;
+    } */
+}
+
+div.container-section a{
+    text-decoration: none;
+}
+
+div.container-section h3{
+    font-family: 'Marcellus';
+    font-weight: lighter;
+    /* font-size: 1.5rem; */
+    /* font-size: 1.4vw; */
+    font-size: clamp(0.7rem, 1.4vw + 0.1rem, 1.5rem);
+    color: white;
+    
+    margin: 10px auto;
+    padding: 6px;
+    /* max-width: 254px; */
+    max-width: 20vw;
+    border-radius: 30px;
+    background-color: #7b994f;
+
+}
+
+
+div.container-section p{
+    font-family: 'Alef';
+    /* font-size: 0.8rem; */
+    /* font-size: 0.9vw; */
+    font-size: clamp(0.45rem, 0.9vw + 0.1rem, 0.8rem);
+    color: #565656;
+    
+    /* max-width: 280px; */
+    max-width: 19.5vw;
+    margin: 10px auto;
+}
+
+@media screen and (max-width: 768px){
+    
+    div.container-section img{
+        width: 40vw;
+    }
+    
+    div.container-section h3{
+        font-size: 3vw;
+        max-width: 40vw;
+    }
+    
+    
+    div.container-section p{
+        font-size: 1.8vw;
+        max-width: 40vw;
+    }
+}
+
+
+#main .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#main section{
+    max-width: 700px;
+}
+
+
+#main section h1{
+    font-family: 'Marcellus';
+    font-weight: lighter;
+    /* font-size: 1.8rem; */
+    /* font-size: 2.25vw; */
+    font-size: clamp(1.25rem, 2.25vw + 0.1rem, 2rem);
+    margin-bottom: 15px;
+}
+
+
+#main section p{
+    font-family: 'Alef';
+    /* font-size: 1rem; */
+    /* font-size: 1.26vw; */
+    font-size: clamp(0.6rem, 1.26vw + 0.1rem, 1.5rem);
+    margin-bottom: 25px;
+}
+
+
+/* #main #lado{
+    width: 80%;
+} */
+
+
+#main_mobile .flex-duvidas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* #main .flex-duvidas a:first-child{
+    margin-top: 42px;
+} */
+
+
+#main_mobile .flex{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#main_mobile section h1{
+    font-family: 'Marcellus';
+    font-weight: lighter;
+    font-size: 1.8rem;
+    /* font-size: 2.25vw; */
+    /* font-size: clamp(1.25rem, 3.5vw + 0.1rem, 2rem); */
+    margin-bottom: 15px;
+}
+
+
+#main_mobile section p{
+    font-family: 'Alef';
+    text-align: center;
+    font-size: 0.7rem;
+    /* font-size: 1.26vw; */
+    /* font-size: clamp(0.6rem, 1.26vw + 0.1rem, 1.5rem); */
+    width: 75vw;
+    margin-bottom: 25px;
+}
+
+
+
+#beneficios{
+    margin-top: 100px;
+    background-color: #7b994f;
+}
+
+#beneficios .flex{
+    justify-content: center;
+    align-items: start;
+    gap: 3%;
+}
+
+.container-benefits{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#beneficios .container-benefits img{
+    width: 150px;
+    margin: 25px auto 20px auto;
+
+}
+
+
+#beneficios .container-benefits h4{
+    font-family: 'Marcellus';
+    font-weight: lighter;
+    /* font-size: 1.5em; */
+    /* font-size: 1.9vw; */
+    font-size: clamp(1.06rem, 1.85vw + 0.1rem, 1.75rem);
+    color: white;
+    
+    text-align: center;
+}
+
+
+#beneficios .container-benefits p{
+    font-family: 'Alef';
+    font-weight: lighter;
+    /* font-size: 1rem; */
+    /* font-size: 1.26vw; */
+    font-size: clamp(0.7rem, 1.26vw + 0.1rem, 1.4rem);
+    color: white;
+    
+    text-align: center;
+    max-width: 300px;
+}
+
+#footer{
+    background-color: #7b994f;
+    padding: 10vh 0;
+}
+
+#cont-form{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 440px;
+}
+
+#formulario{
+    flex-direction: column;
+    padding: 2%;
+    border-radius: 20px;
+}
+
+#formulario h1{
+    font-family: 'Alef';
+    /* font-size: 1.2rem; */
+    /* font-size: 1.5vw; */
+    font-size: clamp(0.87rem, 1.5vw + 0.1rem, 1.5rem) ;
+    margin-bottom: 15px;
+}
+
+#formulario .linha input, #formulario .linha textarea{
+    font-family: 'Alef';
+    font-size: 1rem;
+    color: white;
+    border: none;
+    background-color: #4c6a20;
+    width: 167px;
+    height: 46px;
+    padding: 0 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+#formulario .linha textarea#texto{
+    padding: 15px 20px;
+    width: 378px;
+    height: 158px;
+}
+
+#button{
+    justify-content: end;
+    font-family: 'Alef';
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    
+    
+    border: none;
+    background-color: #4c6a20;
+    padding: 4px 20px;
+    border-radius: 20px;
+}
+
+::placeholder{
+    font-family: 'Alef';
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.contatos{
+    font-family: 'Marcellus';
+    color: white;
+    max-width: 450px;
+}
+
+.contatos h1{
+    /* font-size: 1.2rem; */
+    font-size: clamp(0.87rem, 1.5vw + 0.1rem, 1.5rem) ;
+    font-weight: lighter;
+    margin-bottom: 15px;
+}
+
+.contatos .p{
+    /* font-size: 1.2rem; */
+    font-size: clamp(0.87rem, 1.5vw + 0.1rem, 1.5rem) ;
+    font-weight: lighter;
+    margin-bottom: 15px;
+}
+
+aside{
+    /* background-color: red; */
+    padding: 10px;
+}
+
+.logos-flex{
+    display: flex;
+    justify-content: center;
+}
+
+.logos-flex a img{
+    width: 6vw;
+}
+
+#cont-flex{
+    justify-content: center;
+    gap: 5%;
+}
+
+#footer #pos_aside{
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+@media screen and (max-width: 1125px) {
+    #main .flex-duvidas img{
+        width: 512px;
+    }
+    
+    #formulario .linha input, #formulario .linha textarea{
+        width: 133px;
+    }
+    
+    #formulario .linha textarea#texto{
+        width: 302px;
+    }
+    
+    #cont-form{
+        width: 365px;
+    }
+}
+
+
+
+@media screen and (max-width: 870px) {
+    #main .flex-duvidas img{
+        width: 450px;
+    }
+    
+    #beneficios .container-benefits img{
+        width: 125px;
+        
+    }
+}
+
+
+
+@media screen and (max-width: 914px){
+    #footer #aside{
+        display: none;
+    }
+    
+    #footer #pos_aside{
+        display: flex;
+    }
+}
+
+
+
+@media screen and (min-width: 915px){
+    #footer #pos_aside{
+        display: none;
+    }
+
+    #footer #aside{
+        display: block;
+    }
+}
+
+
+
+
+
+/* MOBILE ATIVAÇÃO E DESATIVAÇÃO */
+
+@media screen and (max-width: 715px){
+    #beneficios article.flex{
+        display: block;
+    }
+
+}
+
+
+
+@media screen and (max-width: 767px){
+    #main{
+        display: none;
+    }
+
+    #main_mobile{
+        display: block;
+    }
+
+    #slider{
+        display: flex;
+    }
+
+    #sessao .flex{
+        flex-direction: column;
+        gap: 6vw;
+    }
+
+    #sessao{
+        margin-bottom: 50px;
+    }
+
+    header ul li a{
+        font-size: 0.8rem;
+    }
+
+    header ul li a:hover{
+       font-size: 1rem;
+    }
+
+    header{
+        background-color: none;
+        position: absolute;
+        transition: 0s;
+    }
+
+    header.rolagem{
+        background-color: rgba(255, 0, 0, 0);
+        transition: 0s;
+
+    }
+
+    #botao{
+        transition: 1s ease;
+
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+
+        transform: translateY(15vh) translateX(-25px);
+        
+        width: 0px;
+        height: 0px;
+
+        opacity: 0;
+
+        box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.658);
+        border-radius: 50%;
+    }
+     
+    
+    #botao.btnrolagem{
+        background-color: #7B994F;
+        transform: translateY(0);
+
+        width: 50px;
+        height: 50px;
+
+        opacity: 100;
+    }
+
+    #botao.btnrolagem img{
+        width: 50px;
+        height: 50px;
+    }
+ 
+    #botao img{
+        transition: 1s ease;
+
+        width: 0px;
+        height: 0px;
+    }
+
+
+    #navdesktop{
+        display: none;
+    }
+    
+    
+}
+
+
+
+
+@media screen and (min-width: 768px){
+    #main{
+        display: block;
+    }
+
+    #main_mobile{
+        display: none;
+    }
+
+    #slider{
+        display: none;
+    }
+
+    #navmobile{
+        display: none;
+    }
+
+    #botao{
+        display: none;
+    }
+
+    .menu_container{
+        display: none;
+    }
+
+    #overlay{
+        display: none;
+    }
+    
+}
+
+
+#navmobile{
+    overflow: hidden;
+}
+
+#navmobile input{
+    display: none;
+}
+
+#navmobile img{
+    cursor: pointer;
+    padding-right: 6vw;
+}
+
+.menu_container{
+    z-index: 3;
+
+    position: fixed;
+    right: 0;
+
+    width: 40vw;
+    height: 100%;
+
+    background-color: #7b994fb0;
+    text-align: end;
+
+    transform: translateX(45vw);
+    transition: 0.5s ease;
+}
+
+.menu_container img{
+    cursor: pointer;
+    padding: 10px;
+    width: 12%;
+    transition: transform 0.5s ease;
+}
+
+.menu_container img:hover{
+    transform: scale(1.2);
+}
+
+.ativar_menu{
+    transform: translateX(0vw);
+}
+
+.menu_container nav{
+    margin-top: 60%;
+} 
+    
+.menu_container nav ul{
+    list-style: none;
+}
+
+.menu_container nav li{
+    text-align: center;
+}
+
+.menu_container nav ul li a{
+    font-family: "PlayFair";
+    font-size: 3.5vw;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    
+    /* padding: 10px 20px 0px 20px; */
+    /* margin: 10px 20px 10px 0px; */
+    transition: 0.5s ease;
+}
+
+.menu_container nav ul li a:hover{
+    font-size: 4vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+.menu_container nav ul li a:active{
+    color: rgb(197, 197, 197);
+}
+
+.menu_container nav ul li{
+    margin-bottom: 30px;
+}
+
+#overlay{
+    display: none;
+
+    z-index: 2;
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+
+
+.no_scroll{
+    overflow: hidden;
+}

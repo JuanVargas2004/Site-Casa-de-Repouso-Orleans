@@ -1,0 +1,470 @@
+@font-face {
+    font-family: 'Marcellus';
+    src: url('../fonts/Marcellus-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'Libre';
+    src: url('../fonts/LibreBodoni-VariableFont_wght.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'LibreBask';
+    src: url('../fonts/LibreBaskerville-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'Alef';
+    src: url('../fonts/Alef-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'PlayFair';
+    src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf')format('truetype');
+}
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.container{
+    width: 100%;
+    /* margin: auto; */
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container{
+    display: flex;
+    margin: 0;
+    height: 16vh;
+}
+
+header .flex{
+    width: 100%;
+}
+
+header{
+    /* position: fixed; */
+    width: 100%;
+    transition: .5s;
+    
+    background-image: url(midia/header-v.png);
+    background-position-y: 36%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header .container img{
+    margin-left: 6vw;
+    transition: transform 0.3s;
+    width: 30%;
+    filter: drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.219));
+}
+
+
+header .container img:hover{
+    transform: scale(1.2);
+}
+
+#navbar{
+    margin-right: 4vw;
+    transition: transform .5s;
+}
+
+header ul{
+    list-style: none;
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0 1vw 0;
+}
+
+header ul li a{
+    filter: drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.247));
+    font-family: 'PlayFair';
+    font-weight: normal;
+    /* font-size: 1.2vw; */
+    font-size: clamp(1rem, 1.2vw + 0.1rem, 3rem);
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .5s ease, font-size .5s ease;
+    
+    
+}
+
+header ul li a:hover{
+    /* font-size: calc((1.2vw + 0.1rem) * 1.1); */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+header ul li a:active{
+    color: rgb(197, 197, 197);
+}
+
+#navbar{
+    margin-right: 4vw;
+    transition: transform .5s;
+}
+
+header ul{
+    list-style: none;
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0 1vw 0;
+}
+
+header ul li a{
+    filter: drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.247));
+    font-family: 'PlayFair';
+    font-weight: normal;
+    font-size: clamp(1rem, 1.2vw + 0.1rem, 3rem);
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .5s ease, font-size .5s ease;
+
+    
+}
+
+header ul li a:hover{
+    /* font-size: 1.15rem; */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+header ul li a:active{
+    color: rgb(197, 197, 197);
+}
+main{
+    margin: 20px auto;
+    width: 90vw;
+}
+
+main h1{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    font-family: 'Marcellus';
+    font-weight: lighter;
+    /* font-size: 2.2rem; */
+    font-size: 20px;
+    font-size: clamp(1.375rem, 2.77vw + 0.1rem, 2.75rem);
+    text-align: center;
+}
+
+main img{
+    width: 37.5vw;
+}
+
+strong{
+    font-weight: lighter;
+    color: #7b994f;
+
+}
+.texteb h1 {
+    font-size: 50px;
+    margin-top: -2px;
+    margin-bottom: 15px;
+}
+.ebooks  {
+    display: flex;
+    justify-content: space-between;
+}
+.ebooks img{
+    width: 300px;
+    border: solid 5px #7b994fde ;
+    
+}
+
+main {
+    text-align: center;
+}
+
+.ebooks, .downloads {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.card01, .card02 {
+    margin: 20px;
+}
+.card03 img {
+    margin: 20px;
+    width: 332px;
+}
+
+.dowa, .dowa2, .dowa3 {
+    margin: 20px;
+
+}
+.dowa {
+    padding-left: 50px;
+}
+.dowa3 {
+    padding-right: 50px;
+}
+
+.dowa a, .dowa2 a, .dowa3 a {
+    font-size: 32px;
+    background-color: #7b994f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid rgb(65, 95, 34);
+    border-left: 20px solid rgb(117, 171, 63);
+    transition: all 0.25s ease-in-out;
+}
+
+.dowa a:hover, .dowa2 a:hover, .dowa3 a:hover {
+    color: rgb(117, 171, 63);
+    background-color: white;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* header .container img {
+        width: 50%;
+        margin: 10px 0;
+    } */
+
+    header ul {
+        text-align: center;
+    }
+
+    header ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main h1 {
+        font-size: 1.5rem;
+    }
+
+    .ebooks, .downloads {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card01, .card02, .card03, .dowa, .dowa2, .dowa3 {
+        margin: 10px 0;
+    }
+
+    .dowa a, .dowa2 a, .dowa3 a {
+        font-size: 2rem;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .container img {
+        width: 70%;
+    }
+
+    main img {
+        width: 100%;
+    }
+
+    .ebooks img {
+        width: 80%;
+    }
+
+    .dowa a, .dowa2 a, .dowa3 a {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.container_ebook{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container_ebook img{
+    width: 25vw;
+    height: 38vw;
+    border: .4vw solid #7b994fde;
+}
+
+.dowa, .dowa2, .dowa3{
+    margin-top: 30px;
+    padding: 0px;
+}
+
+
+
+@media screen and (max-width: 767px){
+    #navdesktop{
+        display: none;
+    }
+
+    header .container{
+        height: 13vh;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .container_ebook img{
+        width: 50vw;
+        height: 68vw;
+    }
+
+}
+
+@media screen and (min-width: 768px){ 
+    #navmobile{
+        display: none;
+    }
+
+    .menu_container{
+        display: none;
+    }
+
+    #menu_flutuante{
+        display: none;
+    }
+
+    #overlay{
+        display: none;
+    }
+}
+
+
+
+#navmobile{
+    overflow: hidden;
+}
+
+#navmobile input{
+    display: none;
+}
+
+#navmobile img{
+    cursor: pointer;
+    padding-right: 6vw;
+}
+
+.menu_container{
+    z-index: 3;
+
+    position: fixed;
+    right: 0;
+
+    width: 40vw;
+    height: 100%;
+
+    background-color: #7b994fb0;
+    text-align: end;
+
+    transform: translateX(45vw);
+    transition: 0.5s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_container img{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+
+    cursor: pointer;
+    padding: 10px;
+    width: 12%;
+    transition: transform 0.5s ease;
+}
+
+.menu_container img:hover{
+    transform: scale(1.2);
+}
+
+.ativar_menu{
+    transform: translateX(0vw);
+}
+
+/* .menu_container nav{
+    margin-top: 60%;
+}  */
+    
+.menu_container nav ul{
+    list-style: none;
+}
+
+.menu_container nav li{
+    text-align: center;
+}
+
+.menu_container nav ul li a{
+    font-family: "PlayFair";
+    font-size: 3.5vw;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    
+    /* padding: 10px 20px 0px 20px; */
+    /* margin: 10px 20px 10px 0px; */
+    transition: 0.5s ease;
+}
+
+.menu_container nav ul li a:hover{
+    font-size: 4vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+.menu_container nav ul li a:active{
+    color: rgb(197, 197, 197);
+}
+
+.menu_container nav ul li{
+    margin-bottom: 30px;
+}
+
+#overlay{
+    display: none;
+
+    z-index: 2;
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+
+
+.no_scroll{
+    overflow: hidden;
+}
