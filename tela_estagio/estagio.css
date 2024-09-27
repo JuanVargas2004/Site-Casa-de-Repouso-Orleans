@@ -29,7 +29,6 @@
     scroll-behavior: smooth;
 }
 
-
 .container{
     width: 100%;
     margin: auto;
@@ -122,68 +121,60 @@ header ul li a:active{
 }
 
 
-
-@media screen and (max-width: 767px){
-    #desktop{
-        display: none;
-    }
-
-    #navdesktop{
-        display: none;
-    }
-
+main{
+    margin: 20px auto;
+    width: 90vw;
 }
 
-@media screen and (min-width: 768px){
-    #mobile{
-        display: none;
-    }
+main h1{
+    font-family: "Marcellus";
+    font-weight: lighter;
+    text-align: center;
+}
+
+
+main h1 strong{
+    font-weight: lighter;
+    color: #7b994f;
+}
+
+#form{
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+.campo{
+    display: flex;
+
+    gap: 15px;
+    margin: 10px auto
+}
+
+.campo .input{
+    color: rgb(207, 203, 203);
+    background-color: #7B994F;
+
+    width: 30vw;
+    max-width: 300px;
     
-    #navmobile{
-        display: none;
-    }
+    height: 4vh;
+    padding: 5px 15px;
+
+    border: none;
+    border-radius: 20px;
+
+    text-align: start;
 }
 
+.campo div{
+    font-family: "Marcellus";
+    font-size: 13.5pt;
 
-@media screen and (max-width: 767px){
-    #navdesktop{
-        display: none;
-    }
-
-    header .container{
-        height: 12vh;
-    }
-
-}
-
-@media screen and (min-width: 768px){ 
-    #navmobile{
-        display: none;
-    }
-
-    .menu_container{
-        display: none;
-    }
-
-    #menu_flutuante{
-        display: none;
-    }
-
-    #overlay{
-        display: none;
-    }
-}
-
-
-#navmobile{
-    overflow: hidden;
-}
-
-#navmobile input{
-    display: none;
-}
-
-#navmobile img{
-    cursor: pointer;
-    padding-right: 6vw;
+    text-align: end;
+    width: 173px;
 }
