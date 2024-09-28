@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="../logo.ico/favicon-16x16.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="login.css">
+
+    <title>Login</title>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+
+            <div class="flex">
+                
+                    <a href="../tela_inicial/tela_inicial.html" class="a_home"><img src="midia/logo.png" alt="imagem de arvore da logo" id="logo"></a>
+                
+                    
+    
+                <nav class="menu_nav">
+                    <ul>
+                        <li><a class="active" href="../tela_nossa_casa/tela_nossa_casa.html">Nossa casa</a></li>
+                        <li><a class="active" href="../tela_servicos/tela_servicos.html">Serviços</a></li>
+                        <li><a class="active" href="../tela_contatos/tela_contatos.html">Contato</a></li>
+                        <li><a class="active" href="tela_login.html">Login</a></li>
+                        <div id="maker"></div>
+                    </ul>
+                </nav>
+          </div>
+        <!-- display flex -->
+        
+        <div class="btn-abrir_menu" id="btn-menu">
+          <i> <img src="midia/icone-menu.png" alt="" /></i>
+        </div>
+  
+        <div class="menu-mobile" id="menu-mobile">
+          <div class="btn-fechar">
+            <i> <img src="midia/icone_close.png" alt="" /></i>
+          </div>
+  
+          <nav id="nav">
+            <ul>
+              <li><a href="../tela_nossa_casa/tela_nossa_casa.html">Nossa casa</a></li>
+              <li><a href="../tela_servicos/tela_servicos.html">Serviços</a></li>
+              <li><a href="../tela_contatos/tela_contatos.html">Contato</a></li>
+              <li><a href="tela_login.html">Login</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="overlay-menu" id="overlay-menu"></div>
+
+</header>
+
+<main>
+    <div class="formulario" >
+        <h1 class="title-forms">ENTRE NA SUA <span>CONTA</span></h1>
+        <form action="#" method="post" class="form">    
+            
+            <input type="email" id="email" value="" placeholder="E-mail" required />
+            <input type="password" id="senha" value="" placeholder="Senha" minlength="8" required/>
+            
+            <a href="#">Esqueci minha senha</a>
+            <input type="submit" id="submit" value="ENTRAR">
+        </form>
+    </div>
+
+      <div class="container-link">
+      <p>clique abaixo e venha fazer estagio conosco</p>
+
+        <a href="../tela_estagio/estagio.html">APLICAÇÃO DE ESTÁGIO</a>
+      </div>
+
+      <div class="container-link">
+        <p>caso você ainda não tenha uma conta clique abaixo para criar </p>
+
+        <a href="../tela_registrar/registrar.html">Criar conta</a>
+      </div>  
+</main>
+
+<footer id="footer">
+  <img src="midia/Line 1.png" alt="" />
+  <div class="rodape">
+    <img src="midia/Vector.png" alt="logo rodape" />
+    <p>
+      Copyright©2024-2030, orleans Company. Todos os direitos reservados.
+    </p>
+    <p>política de privacidade</p>
+    <p>direito de titulos</p>
+  </div>
+
+</footer>
+
+
+<script src="menu-mobile.js" defer></script>
+<script src="voltar-topo.js" defer></script>
+</body>
+</html>

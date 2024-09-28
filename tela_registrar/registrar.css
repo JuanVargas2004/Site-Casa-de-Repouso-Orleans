@@ -1,0 +1,350 @@
+@font-face {
+    font-family: "LibreBaskerville";
+    src: url("../fonts/LibreBaskerville-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "marcellus";
+    src: url("../fonts/Marcellus-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Alef";
+    src: url("../fonts/Alef-Regular.ttf") format(truetype);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Alef-Bold";
+    src: url("../fonts/Alef-Bold.ttf") format(truetype);
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Playfair";
+    src: url("../fonts/PlayfairDisplay-VariableFont_wght.ttf") format(truetype);
+    font-weight: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    /* height: 1200vh; */
+}
+
+/* INICIO NAVEGAÇÃO */
+#header {
+    height: 8.125rem;
+    background-size: cover;
+    background-image: url(midia/[GetPaidStock\ 2.png);
+    text-align: center;
+    width: 100%;
+    top: 0;
+}
+
+.container {
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#logo {
+    margin-top: 1.3em;
+    margin-left: 5.6vw;
+    width: 73px;
+    height: 72px;
+    filter: drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s, width 0.3s;
+    }
+
+#logo:hover{
+    transform: scale(1.2);
+}
+
+nav ul {
+    margin-top: 0;
+    list-style-type: none;
+    font-family: "Playfair";
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    font-size: 2.7rem;
+}
+nav ul li a:hover {
+    font-size: 1.3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+
+nav ul li a:active {
+    color: rgb(197, 197, 197);
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px 0;
+}
+
+nav ul li a {
+    transition: border-bottom 0.5s ease, font-size 0.5s ease;
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+/* STYLE MENU MOBILE */
+.menu-mobile {
+    background-color: #7b994fb0;
+    backdrop-filter: blur(8px);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999999;
+    display: none;
+    width: 0%;
+    overflow: hidden;
+    transition: 0.5s;
+
+}
+
+.menu-mobile.abrir-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.btn-fechar img{
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu {
+    display: block;
+}
+
+.btn-abrir_menu {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+}
+
+.btn-abrir_menu img {
+    display: none;
+    width: 30px;
+    height: 35px;
+}
+.menu-mobile nav ul {
+    display: flex;
+    text-align: right;
+    list-style-type: none;
+}
+.menu-mobile nav ul {
+    list-style: none;
+    right: 20%;
+    text-align: center;
+    top: 30%;
+    position: absolute;
+    flex-direction: column;
+    /* width: 100%; */
+}
+.menu-mobile nav ul li a {
+    font-family: "PlayFair";
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 300;
+    /* padding: 20px 8%; */
+    margin: 25px 0;
+    display: block;
+    transition: border-right 0.5s ease, font-size 0.5s ease;
+}
+
+.menu-mobile nav ul li a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+    font-size: 1.7rem;
+}
+
+.menu-mobile nav ul li a:active {
+    color: rgb(197, 197, 197);
+}
+
+.menu-mobile .btn-fechar img {
+    width: 30px;
+    height: 30px;
+    display: absolute;
+    margin: 10px 10px 10px 90%;
+}
+  
+.overlay-menu {
+    background-color: #000000a1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+  
+  /* VOLTAR AO TOPO */
+#botao {
+    transition: 1s ease;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    transform: translateY(15vh) translateX(-25px);
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.658);
+    border-radius: 50%;
+}
+  
+#botao.btnrolagem {
+    background-color: #7b994f;
+    transform: translateY(0);
+  
+    width: 50px;
+    height: 50px;
+  
+    opacity: 100;
+}
+  
+#botao.btnrolagem img {
+    width: 50px;
+    height: 50px;
+}
+  
+#botao img {
+    transition: 1s ease;
+  
+    width: 0px;
+    height: 0px;
+}
+/* INICIO CONTEUDO PRINCIPAL */
+.formulario {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tittle-forms {
+    font-family: "marcellus";
+    font-weight: lighter;
+    margin-bottom: 6rem;  
+    font-size: 2.5rem;
+}
+
+.tittle-forms span {
+    color: #7b994f;
+}
+
+.form {  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 457px;
+    height: 280px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 400px;
+}
+
+.campo{
+    display: flex;
+    text-align: right;
+    align-items: center;
+    justify-content: flex-end;
+}
+.campo label {
+    font-family: "marcellus";
+    font-weight: bold;
+    width: 200px;
+    font-size: 1.25rem;
+    padding: 20px;
+}
+
+.campo  input{
+    background-color: #7b994f;
+    border: #7b994f;
+    border-radius: 15px;
+    width: 476px;
+    height: 41px;
+}
+
+.checkbox-container{
+    font-family: "marcellus";
+    text-align: left;
+    align-items: center;
+    padding: 5px;
+}
+
+.checkbox-container input#checkbox{
+    width: 22px ;
+    height: 22px;
+}
+
+.checkbox-container a {
+    text-decoration: none;
+}
+
+#submit{
+    color: #ffffff;
+    background-color: #7b994f;
+    border-radius: 10px;
+    padding: 7px;
+    width: 104px;
+    height: 40px;
+    margin: 30px auto 0 0 ;
+    font-weight: bold;
+    border: #7b994f;
+}
+
+#submit:hover{
+    background-color: #58683e ;
+    height: 43px;
+    padding: 10px;
+    transition: 0.4s;
+}
+
+
+footer img {
+    margin: 50px 0 0 2vw;
+    width: 95vw;
+    max-width: 100%;
+  }
+  
+  .rodape {
+    display: flex;
+    margin: 10px 15% 0;
+  }
+  
+  .rodape img {
+    margin-top: 25px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .rodape p {
+    padding: 20px;
+    font-family: "LibreBaskerville";
+    font-size: 10px;
+    text-transform: uppercase;
+  }
