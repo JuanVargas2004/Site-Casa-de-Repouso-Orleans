@@ -43,7 +43,7 @@
 header .container{
     display: flex;
     margin: 0;
-    height: 16vh;
+    height: 14vh;
 }
 
 header .flex{
@@ -177,4 +177,51 @@ main h1 strong{
 
     text-align: end;
     width: 173px;
+}
+
+.campo #tfile{
+    position: relative;
+}
+
+.campo #tfile img{
+    position: absolute;
+
+    top: 4px;
+    width: 25px;
+}
+
+.check{
+    font-family: "Marcellus";
+    font-size: 11pt;
+}
+
+.containerM{
+    text-align: center;
+}
+
+.containerCheck{
+    margin: 20px auto;
+
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+#button{
+    font-family: "Marcellus";
+    font-weight: bold;
+    font-size: 12pt;
+    
+    color: white;
+    background-color: #7b994f;
+
+    border: none;
+    
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+#button:active{
+    background-color: #5b7436;
+    padding: 9px 14px;
 }
