@@ -249,3 +249,10 @@ main h1 strong{
     font-size: 13.5pt;
     color: #D14B4B   ;
 }
+
+
+#file-error{
+    color: #D14B4B;
+    font-family: "Marcellus";
+    font-size: 13.5pt;
+}

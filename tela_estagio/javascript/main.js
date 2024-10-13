@@ -25,17 +25,31 @@ textos.forEach(function(texto){
 
 // Adicionando nome do arquivo na label
 var input = document.querySelector("#curriculo")
+var fileError = document.querySelector("#file-error")
 
 input.addEventListener('change', function(){
-    var nome_arquivo = input.files[0]['name']
+    var file = input.files[0];
+    var desc = document.querySelector("#tfile #desc");
+
     
-
-    var desc = document.querySelector("#tfile #desc")
-    desc.innerHTML = nome_arquivo
-    // desc.style.fontStyle = "normal"
-
+    if (file) {
+        console.log(file)
+        if (file.type === "application/pdf") {
+            desc.innerHTML = file.name;
+            fileError.textContent = "";
+            fileError.style.display = "none";
+        } else {
+            desc.innerHTML = "Selecione um arquivo PDF...";
+            fileError.textContent = "Por favor, selecione apenas arquivos PDF.";
+            fileError.style.display = "block";
+            input.value = ""; 
+        }
+    } else {
+        desc.innerHTML = "Selecione um arquivo PDF...";
+        fileError.textContent = "";
+        fileError.style.display = "none";
+    }
 })
-
 
 // Adicionando mascara ao telefone usando jquery
 $("#tel").mask('(00) 00000-0000')
@@ -53,11 +67,8 @@ cemail.addEventListener('input', verificarEmail)
 function verificarEmail() {
 
     if (email.value !== cemail.value) {
-        cemail.style.border = "2px solid #7b994f"
+        cemail.style.border = "2px solid #D14B4B"
         confirmar.innerHTML = "Email não confere"
-        confirmar.style.color = "#7b994f"
-        confirmar.style.fontFamily = "Marcellus"
-        confirmar.style.fontSize = "13.5pt"
     } else {
         cemail.style.border = "none"
         confirmar.innerHTML = ""
