@@ -130,6 +130,9 @@ main h1{
     font-family: "Marcellus";
     font-weight: lighter;
     text-align: center;
+
+    font-size: 2rem;
+    font-size: clamp(1.8rem, 5vw + 0.1rem, 2.2rem);
 }
 
 
@@ -174,6 +177,7 @@ main h1 strong{
 .campo div{
     font-family: "Marcellus";
     font-size: 13.5pt;
+    font-size: clamp(12.5pt, 1.1vw + 0.1rem, 13.5pt);
 
     text-align: end;
     width: 173px;
@@ -203,7 +207,7 @@ main h1 strong{
 
 .check{
     font-family: "Marcellus";
-    font-size: 11pt;
+    font-size: clamp(9.5pt, 1.1vw + 0.1rem, 11pt);
 }
 
 .containerM{
@@ -255,4 +259,157 @@ main h1 strong{
     color: #D14B4B;
     font-family: "Marcellus";
     font-size: 13.5pt;
+}
+
+
+@media screen and (max-width: 767px){
+    #desktop{
+        display: none;
+    }
+
+    #navdesktop{
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 768px){
+    #navmobile{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 767px){
+    #navdesktop{
+        display: none;
+    }
+
+    header .container{
+        height: 12vh;
+    }
+
+}
+
+@media screen and (min-width: 768px){ 
+    #navmobile{
+        display: none;
+    }
+
+    .menu_container{
+        display: none;
+    }
+
+    #menu_flutuante{
+        display: none;
+    }
+
+    #overlay{
+        display: none;
+    }
+}
+
+#navmobile{
+    overflow: hidden;
+}
+
+#navmobile input{
+    display: none;
+}
+
+#navmobile img{
+    cursor: pointer;
+    padding-right: 6vw;
+}
+
+.menu_container{
+    z-index: 3;
+
+    position: fixed;
+    right: 0;
+
+    width: 40vw;
+    height: 100%;
+
+    background-color: #7b994fb0;
+    text-align: end;
+
+    transform: translateX(45vw);
+    transition: 0.5s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_container img{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+
+    cursor: pointer;
+    padding: 10px;
+    width: 12%;
+    transition: transform 0.5s ease;
+}
+
+.menu_container img:hover{
+    transform: scale(1.2);
+}
+
+.ativar_menu{
+    transform: translateX(0vw);
+}
+
+/* .menu_container nav{
+    margin-top: 60%;
+}  */
+    
+.menu_container nav ul{
+    list-style: none;
+}
+
+.menu_container nav li{
+    text-align: center;
+}
+
+.menu_container nav ul li a{
+    font-family: "PlayFair";
+    font-size: 3.5vw;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    
+    /* padding: 10px 20px 0px 20px; */
+    /* margin: 10px 20px 10px 0px; */
+    transition: 0.5s ease;
+}
+
+.menu_container nav ul li a:hover{
+    font-size: 4vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+.menu_container nav ul li a:active{
+    color: rgb(197, 197, 197);
+}
+
+.menu_container nav ul li{
+    margin-bottom: 30px;
+}
+
+#overlay{
+    display: none;
+
+    z-index: 2;
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+
+
+.no_scroll{
+    overflow: hidden;
 }

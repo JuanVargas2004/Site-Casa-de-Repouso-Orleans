@@ -9,6 +9,25 @@
 </head>
 <body>
     
+    <div class="menu_container" id="menu_flutuante">
+
+        <label for="fechar"><img src="midia/icone_close.png"></label>
+
+        <nav>
+            <ul>
+                <li><a href="../tela_quem_somos/quem_somos.html">Quem Somos</a></li>
+                <li><a href="../tela_nossa_casa/tela_nossa_casa.html">Nossa Casa</a></li>
+                <li><a href="../tela_servicos/tela_servicos.html">Serviços</a></li>
+                <li><a href="../tela_contatos/tela_contatos.html">Contato</a></li>
+                <li><a href="../tela_login/tela_login.html">Entrar</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div id="overlay"></div>
+
+
     <header id="header">
         <div class="container">
 
@@ -25,8 +44,17 @@
                         <li><a href="../tela_login/tela_login.html" class="navitem">Entrar</a></li>
                     </ul>
                 </nav>
-    </header>
 
+                <div id="navmobile">
+                    <input type="radio" name="hamburguer" id="abrir">
+                    <input type="radio" name="hamburguer" id="fechar" checked>
+                    <label for="abrir" id="label_hamburguer"><img src="midia/icone-menu.png" id="img_hamburguer"></label>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
 
     <main>
 
@@ -108,6 +136,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="javascript/menu.js"></script>
     <script src="javascript/main.js"></script>
 </body>
 </html>
