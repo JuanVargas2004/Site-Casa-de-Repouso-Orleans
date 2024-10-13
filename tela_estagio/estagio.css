@@ -180,13 +180,23 @@ main h1 strong{
 }
 
 .campo #tfile{
-    position: relative;
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+#tfile span{
+    font-style: italic;
+    font-size: 9.5pt;
+    text-align: start;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .campo #tfile img{
-    position: absolute;
-
-    top: 4px;
     width: 25px;
 }
 
@@ -224,4 +234,17 @@ main h1 strong{
 #button:active{
     background-color: #5b7436;
     padding: 9px 14px;
+}
+
+.email-campo {
+    position: relative;
+    margin-bottom: 20px; 
+}
+
+#confirmar {
+    text-align: center;
+    width: 100%;
+    font-family: "Marcellus";
+    font-size: 13.5pt;
+    color: #D14B4B   ;
 }
