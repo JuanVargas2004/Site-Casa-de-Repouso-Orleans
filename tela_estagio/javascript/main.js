@@ -1,3 +1,4 @@
+// Hover dos textos
 var textos = document.querySelectorAll(".navitem")
 textos.forEach(function(texto){
 
@@ -21,3 +22,43 @@ textos.forEach(function(texto){
     })
 
 })
+
+// Adicionando nome do arquivo na label
+var input = document.querySelector("#curriculo")
+
+input.addEventListener('change', function(){
+    var nome_arquivo = input.files[0]['name']
+    
+
+    var desc = document.querySelector("#tfile #desc")
+    desc.innerHTML = nome_arquivo
+    // desc.style.fontStyle = "normal"
+
+})
+
+
+// Adicionando mascara ao telefone usando jquery
+$("#tel").mask('(00) 00000-0000')
+
+
+// Fazendo verificação de email
+
+var email = document.querySelector("#email")
+var cemail = document.querySelector("#cemail")
+var confirmar = document.querySelector("#confirmar")
+
+email.addEventListener('input', verificarEmail)
+cemail.addEventListener('input', verificarEmail)
+
+function verificarEmail() {
+    if (email.value !== cemail.value) {
+        cemail.style.border = "2px solid #7b994f"
+        confirmar.innerHTML = "Email não confere"
+        confirmar.style.color = "#7b994f"
+        confirmar.style.fontFamily = "Marcellus"
+        confirmar.style.fontSize = "13.5pt"
+    } else {
+        cemail.style.border = "none"
+        confirmar.innerHTML = ""
+    }
+}

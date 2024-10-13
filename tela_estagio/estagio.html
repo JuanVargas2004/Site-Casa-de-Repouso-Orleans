@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estagio.css">
+    <script src="javascript/jquery-3.7.1.min.js"></script>
     <title>Tela de Estágio</title>
 </head>
 <body>
@@ -31,54 +32,59 @@
 
         <h1>VENHA FAZER <strong>ESTÁGIO</strong> CONOSCO</h1>
 
-        <form action="index.php" method="post">
+        <form action="index.php" method="post" enctype="multipart/form-data">
 
 
             <div id="form">
 
                 <div class="campo">
-                    <div><label for="nome">Nome Completo:</label></div> <input type="text" name="nome" id="nome" class="input">
+                    <div><label for="nome">Nome Completo:</label></div> <input type="text" name="nome" id="nome" class="input" required>
                 </div>
             
 
 
                 <div class="campo">
-                    <div><label for="data">Data de Nascimento:</label></div> <input type="date" name="data" id="data" class="input">
+                    <div><label for="data">Data de Nascimento:</label></div> <input type="date" name="data" id="data" class="input" required>
                 </div>
             
 
 
                 <div class="campo">
-                    <div><label for="tel">Número de Telefone:</label></div> <input type="text" name="tel" id="tel" class="input">
+                    <div><label for="tel">Número de Telefone:</label></div> <input type="text" name="tel" id="tel" class="input" required>
                 </div>
 
 
             
                 <div class="campo">
-                    <div><label for="email">Email:</label></div> <input type="email" name="email" id="email" class="input">
+                    <div><label for="email">Email:</label></div> <input type="email" name="email" id="email" class="input" required>
                 </div>
 
 
             
                 <div class="campo">
-                    <div><label for="cemail">Confirmar Email:</label></div> <input type="email" name="cemail" id="cemail" class="input">
+                    <div><label for="cemail">Confirmar Email:</label></div> <input type="email" name="cemail" id="cemail" class="input" required>
                 </div>
+
+                <div id="confirmar"></div>
 
 
                 <div class="campo">
                     <div><label for="curriculo">Anexar Currículo:</label></div>
             
                     <label for="curriculo">
-                        <div class="input" id="tfile"><img src="midia/anexo.png"></div>
+                        <div class="input" id="tfile">
+                            <img src="midia/anexo.png">
+                            <div id="desc">Selecione um arquivo...</div>
+                        </div>
                     </label>
-                    <input type="file" name="curriculo" id="curriculo" class="input" style="display: none;">
+                    <input type="file" name="curriculo" id="curriculo" class="input" style="display: none;" required>
                 </div>
 
 
                 <div class="containerM">
                     <div class="containerCheck">
                         <div class="check">
-                            <input type="checkbox" name="termos" id="termos"> Eu li e concordo com os termos de uso.
+                            <input type="checkbox" name="termos" id="termos" required> Eu li e concordo com os termos de uso.
                         </div>
                         <div class="check">
                             <input type="checkbox" name="receber" id="receber"> Aceito receber noticias via email sobre novidades da Casa de Repouso Orleans.
@@ -98,7 +104,7 @@
     </main>
 
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
     <script src="javascript/main.js"></script>
 </body>
 </html>

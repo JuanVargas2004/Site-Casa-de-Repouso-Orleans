@@ -180,13 +180,23 @@ main h1 strong{
 }
 
 .campo #tfile{
-    position: relative;
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+#tfile #desc{
+    font-style: italic;
+    font-size: 9.5pt;
+    text-align: start;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .campo #tfile img{
-    position: absolute;
-
-    top: 4px;
     width: 25px;
 }
 
