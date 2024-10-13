@@ -74,3 +74,18 @@ function verificarEmail() {
         confirmar.innerHTML = ""
     }
 }
+
+// Não enviar o arquivo caso os emails não confiram
+function validarFormulario() {
+    var email = document.getElementById('email').value;
+    var cemail = document.getElementById('cemail').value;
+    var confirmar = document.getElementById('confirmar');
+
+    if (email !== cemail) {
+        confirmar.innerHTML = "Os emails não conferem. Por favor, verifique.";
+        return false; // Impede o envio do formulário
+    }
+    
+    confirmar.innerHTML = ""; // Limpa a mensagem de erro se os emails coincidirem
+    return true; // Permite o envio do formulário
+}
