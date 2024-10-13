@@ -51,12 +51,15 @@ email.addEventListener('input', verificarEmail)
 cemail.addEventListener('input', verificarEmail)
 
 function verificarEmail() {
-    if (email.value !== cemail.value && cemail.value !== "") {
-        confirmar.textContent = "Emails não conferem"
-        confirmar.style.display = "block"
+
+    if (email.value !== cemail.value) {
+        cemail.style.border = "2px solid #7b994f"
+        confirmar.innerHTML = "Email não confere"
+        confirmar.style.color = "#7b994f"
+        confirmar.style.fontFamily = "Marcellus"
+        confirmar.style.fontSize = "13.5pt"
     } else {
         cemail.style.border = "none"
-        confirmar.textContent = ""
-        confirmar.style.display = "none"
+        confirmar.innerHTML = ""
     }
 }

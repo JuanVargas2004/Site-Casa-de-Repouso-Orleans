@@ -186,7 +186,8 @@ main h1 strong{
     gap: 8px;
 }
 
-#tfile span{
+
+#tfile #desc{
     font-style: italic;
     font-size: 9.5pt;
     text-align: start;
