@@ -1,0 +1,388 @@
+@font-face {
+    font-family: 'Marcellus';
+    src: url('../fonts/Marcellus-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'Libre';
+    src: url('../fonts/LibreBodoni-VariableFont_wght.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'LibreBask';
+    src: url('../fonts/LibreBaskerville-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'Alef';
+    src: url('../fonts/Alef-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'PlayFair';
+    src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf')format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container{
+    display: flex;
+    margin: 0;
+    height: 14vh;
+}
+
+header .flex{
+    width: 100%;
+}
+
+header{
+    /* position: fixed; */
+    width: 100%;
+    transition: .5s;
+    
+    background-image: url(midia/header-v.png);
+    background-position-y: 36%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+header .container img{
+    margin-left: 6vw;
+    transition: transform 0.3s;
+    width: 30%;
+    filter: drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.219));
+}
+
+
+header.rolagem{
+    transition: .5s;
+    background-color: rgba(58, 207, 58, 0.514);
+    height: 75px;
+    display: flex;
+    align-items: center;
+    background-color: #7b994fde;
+    padding: 0;
+}
+
+header .container img:hover{
+    transform: scale(1.2);
+}
+
+#navbar{
+    margin-right: 4vw;
+    transition: transform .5s;
+}
+
+header ul{
+    list-style: none;
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0 1vw 0;
+}
+
+header ul li a{
+    filter: drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.247));
+    font-family: 'PlayFair';
+    font-weight: normal;
+    font-size: clamp(1rem, 1.2vw + 0.1rem, 3rem);
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .5s ease, font-size .5s ease;
+
+    
+}
+
+header ul li a:hover{
+    /* font-size: 1.15rem; */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+header ul li a:active{
+    color: rgb(197, 197, 197);
+}
+
+
+
+
+
+@media screen and (max-width: 767px){
+    #desktop{
+        display: none;
+    }
+
+    #navdesktop{
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 768px){
+    #navmobile{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 767px){
+    #navdesktop{
+        display: none;
+    }
+
+    header .container{
+        height: 12vh;
+    }
+
+}
+
+@media screen and (min-width: 768px){ 
+    #navmobile{
+        display: none;
+    }
+
+    .menu_container{
+        display: none;
+    }
+
+    #menu_flutuante{
+        display: none;
+    }
+
+    #overlay{
+        display: none;
+    }
+}
+
+#navmobile{
+    overflow: hidden;
+}
+
+#navmobile input{
+    display: none;
+}
+
+#navmobile img{
+    cursor: pointer;
+    padding-right: 6vw;
+}
+
+.menu_container{
+    z-index: 3;
+
+    position: fixed;
+    right: 0;
+
+    width: 40vw;
+    height: 100%;
+
+    background-color: #7b994fb0;
+    text-align: end;
+
+    transform: translateX(45vw);
+    transition: 0.5s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_container img{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+
+    cursor: pointer;
+    padding: 10px;
+    width: 12%;
+    transition: transform 0.5s ease;
+}
+
+.menu_container img:hover{
+    transform: scale(1.2);
+}
+
+.ativar_menu{
+    transform: translateX(0vw);
+}
+
+/* .menu_container nav{
+    margin-top: 60%;
+}  */
+    
+.menu_container nav ul{
+    list-style: none;
+}
+
+.menu_container nav li{
+    text-align: center;
+}
+
+.menu_container nav ul li a{
+    font-family: "PlayFair";
+    font-size: 3.5vw;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    
+    /* padding: 10px 20px 0px 20px; */
+    /* margin: 10px 20px 10px 0px; */
+    transition: 0.5s ease;
+}
+
+.menu_container nav ul li a:hover{
+    font-size: 4vw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+.menu_container nav ul li a:active{
+    color: rgb(197, 197, 197);
+}
+
+.menu_container nav ul li{
+    margin-bottom: 30px;
+}
+
+#overlay{
+    display: none;
+
+    z-index: 2;
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+
+
+.no_scroll{
+    overflow: hidden;
+}
+
+main{
+    margin-top: 4vh;
+}
+
+main #title{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin: 0 auto;
+}
+
+main .container img{
+    width: 5vw;
+    height: 5vw;
+
+    padding: 0 0 0 2vw;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+main .container h1{
+    font-family: 'Marcellus';
+    /* font-size: 3.4vw; */
+    font-size: clamp(1.5rem, 3vw + 0.1rem, 3rem);
+    color: #7B994F;
+}
+
+main .container p{
+    font-family: 'Marcellus';
+    font-size: clamp(.75rem, 1.2vw + 0.1rem, 3rem);
+    padding: 2px;
+    word-break: break-word;
+}
+
+form{
+    margin: 5vh 0 12vh 0;
+    padding: 0 0 0 2vw;
+}
+
+.title_form{
+    font-family: 'Marcellus';
+    font-size: clamp(1rem, 1.7vw + 0.1rem, 3rem);
+    font-weight: normal;
+
+    margin: 2vh 4vw;
+}
+
+.form-container{
+    display: flex;
+    gap: 15px;
+
+    margin: 0 0 10px 4vw;
+}
+
+.input_form{
+    font-family: 'Marcellus';
+    font-size: clamp(.75rem, 1vw + 0.1rem, 3rem);
+
+    border: none;
+    background-color: #E0E0E0;
+    color: #7C7C7C;
+    border-radius: 30px;
+
+    padding: 0 15px;
+    width: 25vw;
+    height: 38px;
+}
+
+
+#campo label{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+#campo img{
+    width: 18px;
+    height: 18px;
+}
+
+.submit_form{
+    font-family: 'Alef';
+    font-weight: lighter;
+    border: none;
+    background-color: #7B994F;
+    color: #FFFFFF;
+
+    border-radius: 12px;
+    /* padding: 2.5px 4px; */
+    margin: 2vh 0 0 4vw;
+
+    width: 156px;
+    height: 27px;
+}
+
+.submit_form:active{
+    background-color: #50662f;
+}
+
+#form_delete{
+    margin: 12vh 0;
+}
+
+#form_delete input{
+    background-color: #C70000;
+}
+
+#form_delete input:active{
+    background-color: #840000;
+}

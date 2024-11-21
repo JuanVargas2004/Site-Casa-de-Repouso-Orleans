@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gerenciamento.css">
+    <script src="javascript/jquery-3.7.1.min.js"></script>
+    <title>Tela de Estágio</title>
+</head>
+<body>
+    
+    <div class="menu_container" id="menu_flutuante">
+
+        <label for="fechar"><img src="midia/icone_close.png"></label>
+
+        <nav>
+            <ul>
+                <li><a href="../tela_quem_somos/quem_somos.html">Quem Somos</a></li>
+                <li><a href="../tela_nossa_casa/tela_nossa_casa.html">Nossa Casa</a></li>
+                <li><a href="../tela_servicos/tela_servicos.html">Serviços</a></li>
+                <li><a href="../tela_contatos/tela_contatos.html">Contato</a></li>
+                <li><a href="../tela_login/tela_login.html">Entrar</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div id="overlay"></div>
+
+
+    <header id="header">
+        <div class="container">
+
+            <div class="flex">
+
+                <a href="../tela_inicial/tela_inicial.html"><img src="midia/logo.png" alt="Logo" id="logo"></a>
+
+                <nav id="navdesktop">
+                    <ul id="navbar">
+                        <li><a href="#" class="navitem">Quem Somos</a></li>
+                        <li><a href="../tela_nossa_casa/tela_nossa_casa.html" class="navitem">Nossa Casa</a></li>
+                        <li><a href="../tela_servicos/tela_servicos.html" class="navitem">Serviços</a></li>
+                        <li><a href="../tela_contatos/tela_contatos.html" class="navitem">Contato</a></li>
+                        <li><a href="../tela_login/tela_login.html" class="navitem">Entrar</a></li>
+                    </ul>
+                </nav>
+
+                <div id="navmobile">
+                    <input type="radio" name="hamburguer" id="abrir">
+                    <input type="radio" name="hamburguer" id="fechar" checked>
+                    <label for="abrir" id="label_hamburguer"><img src="midia/icone-menu.png" id="img_hamburguer"></label>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="container" id="title">
+            <img src="midia/seta-voltar.png" alt="Seta para voltar" id="seta_voltar">
+            <div>
+                <h1>Gerenciamento de Conta</h1>
+                <p>Lembre-se: Mantenha os seus dados atualizados e permita que toda a comunicação que se faz necessária chegue até você.</p>
+            </div>
+        </div>
+
+
+        <form action="" method="get">
+            <h2 class="title_form">Alterar Dados Pessoais:</h2>
+
+            
+            <div class="form-container">
+                <input class="input_form" type="text" name="nome" id="nome" placeholder="NOME">
+
+                <input class="input_form" type="email" name="personal_email" id="personal_email" placeholder="E-MAIL">
+
+                <input class="input_form" type="text" name="nascimento" id="nascimento" placeholder="DATA DE NASCIMENTO" onfocus="(this.type='date')" onblur="if (!this.value) this.type='text'">
+                
+            </div>
+
+            <div class="form-container">
+                <input class="input_form" type="text" name="telefone" id="telefone" placeholder="TELEFONE">
+
+                <div id="campo">
+                    <label class="input_form" for="arquivo">
+                        <img src="midia/file.png" alt="Anexar arquivo">
+                        <span>ANEXAR ARQUIVO</span>
+                    </label>
+                    <input type="file" name="arquivo" id="arquivo" style="display: none;">
+                </div>
+            </div>
+
+            <input type="submit" value="ENVIAR ALTERAÇÕES" class="submit_form">
+
+        </form>
+
+
+        <form action="" method="get">
+            <h2 class="title_form">Alterar Dados de Login:</h2>
+
+            
+            <div class="form-container">
+                <input class="input_form" type="email" name="login_email" id="login_email" placeholder="E-MAIL">
+                
+                <input class="input_form" type="text" name="nome" id="nome" placeholder="NOME">
+                
+            </div>
+
+            <input type="submit" value="ENVIAR ALTERAÇÕES" class="submit_form">
+
+        </form>
+
+
+
+        <form action="" id="form_delete">
+            <input type="submit" value="EXCLUIR CONTA" class="submit_form">
+        </form>
+
+    </main>
+
+
+    <script src="javascript/menu.js"></script>
+    <script src="javascript/main.js"></script>
+    <script src="javascript/input_file.js"></script>
+</body>
+</html>
+    
