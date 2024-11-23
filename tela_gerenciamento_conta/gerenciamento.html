@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="gerenciamento.css">
     <script src="javascript/jquery-3.7.1.min.js"></script>
-    <title>Tela de Estágio</title>
+    <title>Gerenciamento</title>
 </head>
 <body>
     
@@ -19,7 +19,7 @@
                 <li><a href="../tela_nossa_casa/tela_nossa_casa.html">Nossa Casa</a></li>
                 <li><a href="../tela_servicos/tela_servicos.html">Serviços</a></li>
                 <li><a href="../tela_contatos/tela_contatos.html">Contato</a></li>
-                <li><a href="../tela_login/tela_login.html">Entrar</a></li>
+                <li><a href="../tela_login/tela_login.html">Gerenciamento</a></li>
             </ul>
         </nav>
 
@@ -41,7 +41,7 @@
                         <li><a href="../tela_nossa_casa/tela_nossa_casa.html" class="navitem">Nossa Casa</a></li>
                         <li><a href="../tela_servicos/tela_servicos.html" class="navitem">Serviços</a></li>
                         <li><a href="../tela_contatos/tela_contatos.html" class="navitem">Contato</a></li>
-                        <li><a href="../tela_login/tela_login.html" class="navitem">Entrar</a></li>
+                        <li><a href="../tela_login/tela_login.html" class="navitem"><img src="midia/manager.png" id="manager"></a></li>
                     </ul>
                 </nav>
 
@@ -58,15 +58,15 @@
 
     <main>
         <div class="container" id="title">
-            <img src="midia/seta-voltar.png" alt="Seta para voltar" id="seta_voltar">
+            <img src="midia/seta-voltar.png" alt="Seta para voltar" id="seta_voltar" onclick="window.history.back()">
             <div>
                 <h1>Gerenciamento de Conta</h1>
                 <p>Lembre-se: Mantenha os seus dados atualizados e permita que toda a comunicação que se faz necessária chegue até você.</p>
             </div>
         </div>
 
-
-        <form action="" method="get">
+<!-- FORM PESSOAL PARA DESKTOP -->
+        <form action="" method="get" id="pessoal_desktop">
             <h2 class="title_form">Alterar Dados Pessoais:</h2>
 
             
@@ -95,8 +95,43 @@
 
         </form>
 
+<!-- FORM PESSOAL PARA MOBILE -->
+        <form action="" method="get" id="pessoal_mobile">
+            <h2 class="title_form">Alterar Dados Pessoais:</h2>
 
-        <form action="" method="get">
+            
+            <div class="form-container">
+                <input class="input_form" type="text" name="nome" id="nome" placeholder="NOME">
+
+                <input class="input_form" type="email" name="personal_email" id="personal_email" placeholder="E-MAIL">
+            </div>
+            
+            <div class="form-container">
+                <input class="input_form" type="text" name="nascimento" id="nascimento" placeholder="DATA DE NASCIMENTO" onfocus="(this.type='date')" onblur="if (!this.value) this.type='text'">
+                
+                <input class="input_form" type="text" name="telefone" id="telefone" placeholder="TELEFONE">
+
+            </div>
+            
+            <div class="form-container">
+                
+                <div id="campo">
+                    <label class="input_form" for="arquivo">
+                        <img src="midia/file.png" alt="Anexar arquivo">
+                        <span>ANEXAR ARQUIVO</span>
+                    </label>
+                    <input type="file" name="arquivo" id="arquivo" style="display: none;">
+                </div>
+
+            </div>
+
+            <input type="submit" value="ENVIAR ALTERAÇÕES" class="submit_form">
+
+        </form>
+
+
+<!-- FORM LOGIN -->
+        <form action="" method="" id="form_login">
             <h2 class="title_form">Alterar Dados de Login:</h2>
 
             
@@ -113,13 +148,48 @@
 
 
 
-        <form action="" id="form_delete">
-            <input type="submit" value="EXCLUIR CONTA" class="submit_form">
-        </form>
+        <label for="open_overdelete" class="label_delete">
+            <div class="submit_form">EXCLUIR CONTA</div>
+        </label>
+        
+        <div id="delete_confirm">
+            <input type="radio" name="delete_account" id="close_overdelete" checked>
+            <input type="radio" name="delete_account" id="open_overdelete">
+        </div>
+
+        <div id="overdelete">
+
+            <section>
+                
+                <h2>Você tem certeza?!</h2>
+                <h3>Para continuar o processo de exclusão da conta, preencha corretamente os campos abaixo:</h3>
+
+                <form action="" method="get">
+
+                    <class class="flex-column">
+                        <input class="input_form" type="email" name="login_email" id="login_email" placeholder="E-MAIL">
+                        <input class="input_form" type="password" name="password" id="password" placeholder="SENHA">
+                    </class>
+
+                    
+                    <div id="over_buttons">
+                        <label for="close_overdelete" id="fechar_overdelete">
+                            <div>CANCELAR</div>
+                        </label>
+                        
+                        <input type="submit" value="ENVIAR ALTERAÇÕES">
+                    </div>
+                    
+                </form>
+
+            </section>
+
+        </div>
 
     </main>
 
-
+    
+    <script src="javascript/confirm.js"></script>
     <script src="javascript/menu.js"></script>
     <script src="javascript/main.js"></script>
     <script src="javascript/input_file.js"></script>

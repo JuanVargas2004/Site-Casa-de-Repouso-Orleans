@@ -24,3 +24,14 @@ textos.forEach(function(texto){
     })
 
 })
+
+
+var img = document.querySelector("#seta_voltar")
+
+img.addEventListener('mouseenter', function(){
+    img.style.transform = "scale(1.2)"
+})
+
+img.addEventListener('mouseleave', function(){
+    img.style.transform = "scale(1)"
+})

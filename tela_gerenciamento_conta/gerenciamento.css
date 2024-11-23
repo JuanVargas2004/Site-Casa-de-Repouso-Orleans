@@ -69,6 +69,10 @@ header .container img{
     filter: drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.219));
 }
 
+#manager{
+    margin:0;
+    width: 90%;
+}
 
 header.rolagem{
     transition: .5s;
@@ -91,6 +95,9 @@ header .container img:hover{
 
 header ul{
     list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 header ul li{
@@ -294,7 +301,11 @@ main .container img{
     padding: 0 0 0 2vw;
     min-width: 40px;
     min-height: 40px;
+
+    transition: .5s ease;
+    cursor: pointer;
 }
+
 
 main .container h1{
     font-family: 'Marcellus';
@@ -326,7 +337,6 @@ form{
 .form-container{
     display: flex;
     gap: 15px;
-
     margin: 0 0 10px 4vw;
 }
 
@@ -341,7 +351,9 @@ form{
 
     padding: 0 15px;
     width: 25vw;
-    height: 38px;
+    height: 7vh;
+    margin: 0 0 10px 0;
+    box-sizing: border-box;
 }
 
 
@@ -369,20 +381,212 @@ form{
 
     width: 156px;
     height: 27px;
+
+    cursor: pointer;
 }
 
 .submit_form:active{
     background-color: #50662f;
 }
 
-#form_delete{
+.label_delete{
+    font-family: "Alef";
+    font-size: .85rem;
     margin: 12vh 0;
 }
 
-#form_delete input{
+.label_delete div{
     background-color: #C70000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#form_delete input:active{
+.label_delete div:active{
     background-color: #840000;
+}
+
+
+/* SUMIR FORM DESKTOP */
+@media screen and (max-width: 675px){
+
+    #pessoal_desktop{
+        display: none;
+    }
+
+    #pessoal_mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #form_login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .label_delete{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+/* SUMIR FORM MOBILE */
+@media screen and (min-width: 675px){
+    #pessoal_mobile{
+        display: none;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#delete_confirm{
+    display: none;
+}
+
+
+#overdelete{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+    top: 0px;
+    z-index: 5;
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.815);
+
+    transition: .5s ease;
+}
+
+
+#overdelete section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    
+    background-color: #f7f7f7;
+    border-radius: 50px;
+
+    padding: 2.5vw 2vw;
+
+    width: min(60vw, 500px);
+    height: auto;
+    min-height: 60vh;
+    box-sizing: border-box;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+#overdelete section h2{
+    font-family: "Marcellus";
+    font-size: clamp(1.5rem, 3vw + 0.1rem, 3rem);
+    
+    margin: 0 0 5vh 0;
+    color: #7B994F;
+}
+
+
+#overdelete section h3{
+    font-family: "Marcellus";
+    font-weight: normal;
+    font-size: clamp(1rem, 1.4vw + 0.1rem, 3rem);
+
+    color: #424242;
+
+    margin: 0 0 -2vh 0;
+}
+
+
+#overdelete section form{
+    margin: 5vh 0 0 0;
+}
+
+
+#overdelete .input_form{
+    width: 100%;
+    min-width: 200px;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+
+#over_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 5vh 0 0 0;
+    
+    width: 100%;
+    gap: 3vw;
+}
+
+
+#fechar_overdelete{
+    font-family: "Alef";
+    font-weight: lighter;
+    /* font-size: 1.2rem; */
+    font-size: clamp(1rem, 1.2vw + 0.1rem, 3rem);
+    color: #FFFFFF;
+
+    border-radius: 12px;
+    
+    padding: 5px 10px;
+    background-color: #7B994F;
+
+    cursor: pointer;
+}
+
+#fechar_overdelete:active{
+    background-color: #50662f;
+}
+
+#over_buttons input{
+    font-family: "Alef";
+    font-weight: lighter;
+    /* font-size: 1.2rem; */
+    font-size: clamp(1rem, 1.2vw + 0.1rem, 3rem);
+    color: #FFFFFF;
+    
+    border: none;
+    border-radius: 12px;
+    
+    padding: 5px 10px;
+    background-color: #C70000;
+
+    cursor: pointer;
+}
+
+#over_buttons input:active{
+    background-color: #840000;
+}
+
+@media screen and (max-width: 500px) {
+    #overdelete section {
+        width: 90vw;
+        padding: 20px;
+    }
+    
+    #overdelete .input_form {
+        min-width: unset;
+    }
 }
