@@ -1,6 +1,6 @@
 @font-face {
     font-family: "LibreBaskerville";
-    src: url("../fonts/LibreBaskerville-Regular.ttf") format("truetype");
+    src: url("/fonts/LibreBaskerville-Regular.ttf") format("truetype");
     font-weight: normal;
   }
   
@@ -246,9 +246,6 @@
   
   
   
-  
-  
- 
   .geren {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
@@ -270,9 +267,6 @@ h1 {
 h1 .green {
     color: #7BA539;
 }
-
-
-
 .button {
     text-decoration: none;
     font-family: "marcellus";
@@ -282,7 +276,7 @@ h1 .green {
     border-radius: 10px;
     padding: 15px;
     margin: 25px 0;
-    width: 300px;
+    width: 400px;
     text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -314,8 +308,6 @@ h1 .green {
   font-size: 24px;
   margin-right: 15px;
 }
-  
-
 
 
 

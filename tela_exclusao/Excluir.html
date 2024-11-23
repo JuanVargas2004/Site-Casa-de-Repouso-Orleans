@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="../logo.ico/favicon-16x16.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="Excluir.css">
+
+    <title>EXCLUSAO DE CONTA</title>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+
+            <div class="flex">
+                
+                    <a href="../tela_inicial/tela_inicial.html" class="a_home"><img src="midia/logo.png" alt="imagem de arvore da logo" id="logo"></a>
+                
+                    
+    
+                <nav class="menu_nav">
+                    <ul>
+                        <li><a class="active" href="../tela_nossa_casa/tela_nossa_casa.html">Nossa casa</a></li>
+                        <li><a class="active" href="../tela_servicos/tela_servicos.html">Serviços</a></li>
+                        <li><a class="active" href="../tela_contatos/tela_contatos.html">Contato</a></li>
+                        <li><a class="active" href="tela_login.html">Entrar</a></li>
+                        <div id="maker"></div>
+                    </ul>
+                </nav>
+          </div>
+        
+
+</header>
+<br><br><br><br><br><br>
+<main>
+  <section class="gerenciamento-conta">
+      <h1>GERENCIAMENTO DE CONTA</h1>
+      <p>Lembre-se: Mantenha os seus dados atualizados e permita que toda a comunicação que se faz necessária chegue até você.</p>
+
+      <div class="dados-pessoais">
+          <h2>Dados pessoais:</h2>
+          <form>
+              <input type="text" placeholder="Nome" required>
+              <input type="email" placeholder="E-MAIL" required>
+              <input type="text" placeholder="Data de Nascimento" id="dataNascimento" onfocus="(this.type='date')" required>
+              <input type="text" placeholder="Telefone" required>
+              <input type="file" placeholder="Arquivo Anexado" required>
+      
+              <button type="submit" class="botao-verde">Enviar Alteração</button>
+          </form>
+      </div>
+      <div class="alterar-login">
+          <h2>Alterar Dados de Login:</h2>
+          <form>
+              <input type="email" placeholder="E-MAIL">
+              <input type="password" placeholder="SENHA"><br>
+              <button type="submit" class="botao-verde">Enviar Alteração</button>
+          </form>
+      </div>
+
+      <button class="botao-vermelho">Excluir Conta</button><br>
+
+      <P class="removedor">*REMOVA SUA CONTA PERMANENTEMENTE DA PLATAFORMA</P>
+      
+      <script>
+          // Seleciona o botão de exclusão pelo ID
+          document.getElementById("botao-vermelho").onclick = function() {
+              // Exibe o alerta com a mensagem
+              alert("Sua conta foi excluída");
+          };
+      </script>
+  </section>
+</main>
+
+<footer id="footer">
+  <img src="midia/Line 1.png" alt="" />
+  <div class="rodape">
+    <img src="midia/Vector.png" alt="logo rodape" />
+    <p>
+      Copyright©2024-2030, orleans Company. Todos os direitos reservados.
+    </p>
+    <p>política de privacidade</p>
+    <p>direito de titulos</p>
+  </div>
+
+</footer>
+
+
+<script src="menu-mobile.js" defer></script>
+<script src="voltar-topo.js" defer></script>
+</body>
+</html>
