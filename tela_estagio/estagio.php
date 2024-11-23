@@ -1,3 +1,46 @@
+<?php 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    function enviar_formulario(){
+        if ($_POST['action'] == 'enviar_formulario'){
+
+            $server = "localhost" ;
+            $user = "root";
+            $pass = "";
+            $bd = "orleans";
+        
+            $conn = mysqli_connect($server, $user, $pass, $bd);
+            
+            $nome = $_POST['nome'];
+            $data = $_POST['data'];
+            $tel = $_POST['tel'];
+            $email = $_POST['email'];
+            $cemail = $_POST['cemail'];
+            // $arquivo = $_FILES['curriculo'];
+
+
+            if ($nome && $data && $tel && $email && $cemail) {
+
+                $sql = "INSERT INTO pedido_estagio (nome, data_nascimento, telefone, email) VALUES ('$nome', '$data', '$tel', '$email')";
+
+                if (mysqli_query($conn, $sql)){
+                    return true;
+                } else {
+                    return "Error: " . mysqli_error($conn);
+                }
+
+            }
+
+        }
+
+    }
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -60,8 +103,9 @@
 
         <h1>VENHA FAZER <strong>ESTÁGIO</strong> CONOSCO</h1>
 
-        <form action="index.php" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data">
 
+            <input type="hidden" name="action" value="enviar_formulario">
 
             <div id="form">
 
@@ -95,7 +139,7 @@
                     <input type="email" name="cemail" id="cemail" class="input" required>
                 </div>
 
-                <div id="confirmar"></div>
+                <div id="confirmar" class="returned_output"></div>
 
 
                 <div class="campo">
@@ -125,6 +169,16 @@
 
 
                 <input type="submit" value="Concluir" id="button" onclick="return validarFormulario()">
+
+                <?php 
+                    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                        if (enviar_formulario()){
+                            echo "<div class='returned_output' id='return_form_true'>Formulário enviado com sucesso!</div>";
+                        } else {
+                            echo "<div class='returned_output' id='return_form_false'>Formulário não enviado!</div>";
+                        }
+                    }
+                ?>
 
                 
             </div>
