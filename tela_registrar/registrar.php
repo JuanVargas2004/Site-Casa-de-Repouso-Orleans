@@ -81,32 +81,33 @@
 
       <div class="campo">
         <label for="email-confirm">Confirme seu e-mail:</label>
-        <input type="email" id="email_confirm" name="email_confirm" required>
+        <input type="email" id="email_confirm" name="email_confirm" pattern="[a-z0-9._%+-]+@example.com" required>
+
       </div>
-      
-      <div id="email-confirm-message" class="mensagem-erro"></div>
 
       <div class="campo">
         <label for="password">Crie uma senha:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password">
       </div>
 
       <div class="campo">
         <label for="password-confirm">Confirme a senha:</label>
-        <input type="password" id="password_confirm" name="password_confirm" required>
+        <input type="password" id="password_confirm" name="password_confirm">
+
       </div>
-      <div id="password-confirm-message" class="mensagem-erro"></div>
-      
       <div class="checkbox-container">
-        <input type="checkbox" class="checkbox" required>
+        <input type="checkbox" id="checkbox" required>
         <label for="checkbox"> Eu li e concordo com os <a href="https://vidafullstack.com.br/termos-de-uso/" target=”_blank”>termos de uso.</a></label>
         <br>
-        <input type="checkbox" class="checkbox" required>
+        <input type="checkbox" id="checkbox" required>
         <label for="checkbox"> Aceito receber noticias via email sobre novidades da Casa de Repouso Orleans. </label>
       </div>
       <input type="submit" id="submit" value="CONCLUIR">
     </form>
   </div>
+
+
+
 
 
 
@@ -122,8 +123,6 @@
     </div>
 
   </footer>
-
-  <script src="js/validar-email.js"></script>
 </body>
 
 </html>
