@@ -1,4 +1,38 @@
+<!-- IMPORTANDO BIBLIOTECAS E FAZENDO CONEXÃO COM S3 -->
+
 <?php 
+
+// DotEnv
+require '../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
+
+$awsAccessKeyId = $_ENV['S3_ACCESS_KEY_ID'];
+$awsSecretAccessKey = $_ENV['S3_SECRET_ACCESS_KEY'];
+
+
+
+// AWS LIBRARY
+require '../vendor/autoload.php';
+use Aws\S3\S3Client;
+use Aws\Exception\AwsException;
+
+// Configuração S3
+$s3 = new S3Client([
+    'version' => 'latest',
+    'region' => 'us-east-2',
+    'credentials' => [
+        'key' => $awsAccessKeyId,
+        'secret' => $awsSecretAccessKey,
+    ],
+]);
+
+
+?>
+
+
+<?php 
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -17,25 +51,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $tel = $_POST['tel'];
             $email = $_POST['email'];
             $cemail = $_POST['cemail'];
-            // $arquivo = $_FILES['curriculo'];
+            $arquivo = $_FILES['curriculo'];
 
 
             if ($nome && $data && $tel && $email && $cemail) {
 
-                $sql = "INSERT INTO pedido_estagio (nome, data_nascimento, telefone, email) VALUES ('$nome', '$data', '$tel', '$email')";
 
-                if (mysqli_query($conn, $sql)){
-                    return true;
-                } else {
-                    return "Error: " . mysqli_error($conn);
+
+                if(isset($arquivo) && $arquivo['error'] == 0){
+                
+                    $nome_arquivo = $nome . "_" . $data;
+
+                    try {
+                        global $s3;
+
+                        // Upload do arquivo para o S3
+
+                        $resultado = $s3->putObject([
+                            'Bucket' => 'casaorleans',
+                            'Key' =>  'curriculos/' . $nome_arquivo,
+                            'SourceFile' => $arquivo['tmp_name'],   
+                            'ContentType' => $arquivo['type'],
+                        ]);
+
+                        $cmd = $s3->getCommand('GetObject', [
+                            'Bucket' => 'casaorleans',
+                            'Key' => 'curriculos/' . $nome_arquivo,
+                        ]);
+
+                        $request = $s3->createPresignedRequest($cmd, '+5 minutes');
+                        $url_arquivo = (string) $request->getUri();
+
+                        $sql = "INSERT INTO estagio (nome, data_nascimento, telefone, email, url_curriculo) VALUES ('$nome', '$data', '$tel', '$email', '$url_arquivo')";
+
+                        if (mysqli_query($conn, $sql)){
+                            return true;
+                        } else {
+                            return "Error: " . mysqli_error($conn);
+                        }
+
+                    } catch (AwsException $e) {
+                        return "Erro ao salvar o arquivo: " . $e->getMessage();
+                    }
+                
                 }
-
             }
 
         }
 
+
+
+
+
+
+
     }
+
 }
+
 
 ?>
 
