@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 if(isset($arquivo) && $arquivo['error'] == 0){
                 
-                    $nome_arquivo = $nome . "_" . $data;
+                    $nome_arquivo = $email . "_" . $data;
 
                     try {
                         global $s3;
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 
         }
-
+        $smt->close();
         $conn->close();
 
 
