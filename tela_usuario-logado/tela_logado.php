@@ -85,7 +85,7 @@ $conn->close();
     <h1 class="title-forms">Seja bem-vindo(a) <br><span><?php echo $_SESSION['nome']; ?></span></h1>
 
     <div class="container-content">
-      <a href="#">
+      <a href="../tela_gerenciamento_conta/gerenciamento.php">
         <img src="midia/icone-do-main.png" alt="icone do conteudo principal">
         <div class="texto">
           <h2>GERENCIE SEUS DADOS</h2>
