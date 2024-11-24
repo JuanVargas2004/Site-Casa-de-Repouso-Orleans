@@ -39,12 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     function enviar_formulario(){
         if ($_POST['action'] == 'enviar_formulario'){
 
-            $server = "localhost" ;
-            $user = "root";
-            $pass = "";
-            $bd = "orleans";
-        
-            $conn = mysqli_connect($server, $user, $pass, $bd);
+            include "../conexao.php";
             
             $nome = $_POST['nome'];
             $data = $_POST['data'];
@@ -82,12 +77,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         $request = $s3->createPresignedRequest($cmd, '+5 minutes');
                         $url_arquivo = (string) $request->getUri();
 
-                        $sql = "INSERT INTO estagio (nome, data_nascimento, telefone, email, url_curriculo) VALUES ('$nome', '$data', '$tel', '$email', '$url_arquivo')";
+                        $sql = "INSERT INTO estagio (nome, data_nascimento, telefone, email, url_curriculo) VALUES (?, ?, ?, ?, ?)";
+                        $smt = $conn->prepare($sql);
+                        $smt->bind_param("sssss", $nome, $data, $tel, $email, $url_arquivo);
 
-                        if (mysqli_query($conn, $sql)){
+                        if ($smt->execute()){
                             return true;
                         } else {
-                            return "Error: " . mysqli_error($conn);
+                            return "Error: " . $conn->error;
                         }
 
                     } catch (AwsException $e) {
@@ -99,9 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         }
 
-
-
-
+        $conn->close();
 
 
 
