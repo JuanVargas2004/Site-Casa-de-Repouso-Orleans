@@ -35,3 +35,7 @@ img.addEventListener('mouseenter', function(){
 img.addEventListener('mouseleave', function(){
     img.style.transform = "scale(1)"
 })
+
+// Adicionando mascara ao telefone usando jquery
+$("#telefone").mask('(00) 00000-0000')
+$("#telefone_mobile").mask('(00) 00000-0000')
