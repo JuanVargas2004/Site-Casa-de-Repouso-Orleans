@@ -153,15 +153,11 @@
     display: flex;
     text-align: right;
     list-style-type: none;
-  }
-  .menu-mobile nav ul {
-    list-style: none;
     right: 20%;
     text-align: center;
     top: 30%;
     position: absolute;
     flex-direction: column;
-    /* width: 100%; */
   }
   .menu-mobile nav ul li a {
     font-family: "PlayFair";
@@ -169,7 +165,6 @@
     color: #ffffff;
     font-size: 1.6rem;
     font-weight: 300;
-    /* padding: 20px 8%; */
     margin: 25px 0;
     display: block;
     transition: border-right 0.5s ease, font-size 0.5s ease;
@@ -360,4 +355,104 @@ footer img {
   font-family: "LibreBaskerville";
   font-size: 10px;
   text-transform: uppercase;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    /* Header e navegação */
+    #header {
+        height: 6rem;
+    }
+
+    #logo {
+        width: 50px;
+        height: 50px;
+        margin-top: 1em;
+    }
+
+    /* Esconde menu desktop */
+    .menu_nav ul {
+        display: none;
+    }
+
+    /* Mostra botão do menu mobile */
+    .btn-abrir_menu img {
+        display: block !important; /* Força exibição do ícone */
+    }
+
+    /* Formulário */
+    .formulario {
+        margin-top: 50px;
+        padding: 0 15px;
+    }
+
+    .title-forms {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 457px;
+    }
+
+    .form input {
+        width: 100%;
+    }
+
+    .form a {
+        margin-left: 0;
+        width: auto;
+    }
+
+    #submit {
+        margin: 20px auto;
+    }
+
+    /* Container links */
+    .container-link {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Header */
+    #header {
+        height: 5rem;
+    }
+
+    #logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Formulário */
+    .title-forms {
+        font-size: 1.5rem;
+    }
+
+    /* Footer */
+    .rodape {
+        margin: 10px 5% 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer img {
+        margin: 30px 0 0 2vw;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media screen and (max-width: 320px) {
+    .title-forms {
+        font-size: 1.3rem;
+    }
+
+    .menu-mobile.abrir-menu {
+        width: 85%;
+    }
 }
