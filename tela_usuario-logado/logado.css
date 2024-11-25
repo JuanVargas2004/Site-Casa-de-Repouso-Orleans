@@ -272,10 +272,16 @@
   border-radius: 10px;
   width: 471px;
   color: #000000;
-  padding: 20px 55px 20px;
+  padding: 20px 55px;
   font-family: "Alef";
   font-weight: bold;
   text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.container-content a:hover {
+  transform: scale(1.02);
+  background-color: #d9d9d980;
 }
 
 .container-content .texto{
@@ -355,4 +361,42 @@ footer img {
   font-family: "LibreBaskerville";
   font-size: 10px;
   text-transform: uppercase;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container-content a {
+    width: 90%;
+    padding: 15px 25px;
+  }
+
+  .container-content h2 {
+    font-size: 24px;
+  }
+
+  .logout {
+    width: 90%;
+    max-width: 420px;
+  }
+
+  .title-forms {
+    font-size: 28px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-content img {
+    width: 70px;
+  }
+
+  .container-content h2 {
+    font-size: 20px;
+  }
+
+  .logout {
+    padding: 15px 10px;
+    height: auto;
+  }
 }
