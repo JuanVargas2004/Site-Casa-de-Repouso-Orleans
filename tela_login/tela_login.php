@@ -69,6 +69,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </nav>
             </div>
         </div>
+
+        <div class="btn-abrir_menu" id="btn-menu">
+            <i> <img src="midia/icone-menu.png" alt="" /></i>
+        </div>
+
+        <div class="menu-mobile" id="menu-mobile">
+            <div class="btn-fechar">
+                <i> <img src="midia/icone_close.png" alt="" /></i>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="../tela_nossa_casa/tela_nossa_casa.html">Nossa casa</a></li>
+                    <li><a href="../tela_servicos/tela_servicos.html">Serviços</a></li>
+                    <li><a href="../tela_contatos/tela_contatos.html">Contato</a></li>
+                    <li><a href="tela_login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overlay-menu" id="overlay-menu"></div>
     </header>
 
 <main>
