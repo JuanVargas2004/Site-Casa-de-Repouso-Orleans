@@ -22,7 +22,7 @@ if (!isset($_SESSION['user_id'])) {
                 $nome = $_POST['nome'];
                 $email = $_POST['personal_email'];
                 $nascimento = $_POST['nascimento'];
-                $telefone = $_POST['telefone'];
+                $password = $_POST['password'];
 
                 global $conn;
 
@@ -41,10 +41,11 @@ if (!isset($_SESSION['user_id'])) {
                         $smt->execute();
                     }
 
-                    if (!empty($telefone)){
-                        $sql = "UPDATE pessoas SET telefone = ? WHERE cod_pessoa = ?";
+                    if (!empty($password)){
+                        $senha_hash = password_hash($password, PASSWORD_DEFAULT);
+                        $sql = "UPDATE pessoas SET senha = ? WHERE cod_pessoa = ?";
                         $smt = $conn->prepare($sql);
-                        $smt->bind_param("si", $telefone, $user_id);
+                        $smt->bind_param("si", $senha_hash, $user_id);
                         $smt->execute();
                     }
 
@@ -87,7 +88,7 @@ if (!isset($_SESSION['user_id'])) {
                 $nome = $_POST['nome_mobile'];
                 $email = $_POST['personal_email_mobile'];
                 $nascimento = $_POST['nascimento_mobile'];
-                $telefone = $_POST['telefone_mobile'];
+                $password = $_POST['password_mobile'];
 
                 global $conn;
 
@@ -106,10 +107,11 @@ if (!isset($_SESSION['user_id'])) {
                         $smt->execute();
                     }
 
-                    if (!empty($telefone)){
-                        $sql = "UPDATE pessoas SET telefone = ? WHERE cod_pessoa = ?";
+                    if (!empty($password)){
+                        $senha_hash = password_hash($password, PASSWORD_DEFAULT);
+                        $sql = "UPDATE pessoas SET senha = ? WHERE cod_pessoa = ?";
                         $smt = $conn->prepare($sql);
-                        $smt->bind_param("si", $telefone, $user_id);
+                        $smt->bind_param("si", $senha_hash, $user_id);
                         $smt->execute();
                     }
 
@@ -143,58 +145,6 @@ if (!isset($_SESSION['user_id'])) {
                 }
 
             }
-        }
-
-        function form_login(){
-
-            if ($_POST['action'] == 'enviar_form_login'){
-                $user_id = $_SESSION['user_id'];
-                $email = $_POST['login_email'];
-                $password = $_POST['login_password'];
-
-                global $conn;
-
-                try{
-
-                    if (!empty($email)){
-
-                        $sql = "SELECT cod_pessoa FROM pessoas WHERE email = ?";
-                        $smt = $conn->prepare($sql);
-                        $smt->bind_param("s", $email);
-                        $smt->execute();
-                        $result = $smt->get_result();
-
-                        if ($result->num_rows > 0){
-                            return "Este email já está em uso";
-                        }
-
-                        $sql = "UPDATE pessoas SET email = ? WHERE cod_pessoa = ?";
-                        $smt = $conn->prepare($sql);
-                        $smt->bind_param("si", $email, $user_id);
-                        if ($smt->execute()) {
-                            $_SESSION['email'] = $email;
-                        }
-                    }
-
-                    if (!empty($password)){
-                        $senha_hash = password_hash($password, PASSWORD_DEFAULT);
-                        $sql = "UPDATE pessoas SET senha = ? WHERE cod_pessoa = ?";
-                        $smt = $conn->prepare($sql);
-                        $smt->bind_param("si", $senha_hash, $user_id);
-                        $smt->execute();
-                    }
-                    
-
-                    $smt->close();
-                    $conn->close();
-                    return true;
-
-                } catch (Exception $e){
-                    return "Erro ao atualizar dados de login";
-                }
-
-            }
-
         }
     
         function form_delete(){
@@ -268,8 +218,6 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="gerenciamento.css">
-    <script src="javascript/jquery-3.7.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <title>Gerenciamento</title>
 </head>
 <body>
@@ -284,7 +232,7 @@ if (!isset($_SESSION['user_id'])) {
                 <li><a href="../tela_nossa_casa/tela_nossa_casa.html">Nossa Casa</a></li>
                 <li><a href="../tela_servicos/tela_servicos.html">Serviços</a></li>
                 <li><a href="../tela_contatos/tela_contatos.html">Contato</a></li>
-                <li><a href="../tela_login/tela_login.php">Gerenciamento</a></li>
+                <li><a href="../tela_login/tela_login.php">Entrar</a></li>
             </ul>
         </nav>
 
@@ -347,7 +295,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>
 
             <div class="form-container">
-                <input class="input_form" type="text" name="telefone" id="telefone" placeholder="TELEFONE">
+                <input class="input_form" type="password" name="password" id="password" placeholder="SENHA">
             </div>
 
             <input type="submit" value="ENVIAR ALTERAÇÕES" class="submit_form">
@@ -386,7 +334,7 @@ if (!isset($_SESSION['user_id'])) {
             <div class="form-container">
                 <input class="input_form" type="text" name="nascimento_mobile" id="nascimento_mobile" placeholder="DATA DE NASCIMENTO" onfocus="(this.type='date')" onblur="if (!this.value) this.type='text'">
                 
-                <input class="input_form" type="text" name="telefone_mobile" id="telefone_mobile" placeholder="TELEFONE">
+                <input class="input_form" type="password" name="password_mobile" id="password_mobile" placeholder="SENHA">
 
             </div>
             
@@ -411,34 +359,6 @@ if (!isset($_SESSION['user_id'])) {
 
 
 <!-- FORM LOGIN -->
-        <form action="" method="post" id="form_login">
-            <input type="hidden" name="action" value="enviar_form_login">
-
-            <h2 class="title_form">Alterar Dados de Login:</h2>
-
-            
-            <div class="form-container">
-                <input class="input_form" type="email" name="login_email" id="login_email" placeholder="E-MAIL">
-
-                <input class="input_form" type="password" name="login_password" id="login_password" placeholder="SENHA">
-                
-            </div>
-
-            <input type="submit" value="ENVIAR ALTERAÇÕES" class="submit_form">
-
-            <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST"){
-                    $returned_message = form_login();
-
-                    if ($returned_message === true){
-                        echo "<div class='returned_output return_login_true'>Dados atualizados com sucesso!</div>";
-                    } else {
-                        echo "<div class='returned_output return_login_false'>$returned_message</div>";
-                    }
-                }
-            ?>
-
-        </form>
 
 
 <!-- FORM DELETE -->
@@ -478,13 +398,14 @@ if (!isset($_SESSION['user_id'])) {
                             if ($_SERVER["REQUEST_METHOD"] == "POST"){
                                 $returned_message = form_delete();
 
-                                if ($returned_message === true){
-                                    session_destroy();
-                                    echo "<script>alert('Conta apagada com sucesso!');</script>";
-                                    echo "<script>window.location.href='../tela_login/tela_login.php';</script>";
-
-                                } else {
-                                    echo "<script>alert('$returned_message');</script>";
+                                if ($_POST['action'] == 'enviar_form_delete') {  // Adiciona verificação da ação
+                                    if ($returned_message === true){
+                                        session_destroy();
+                                        echo "<script>alert('Conta apagada com sucesso!');</script>";
+                                        echo "<script>window.location.href='../tela_login/tela_login.php';</script>";
+                                    } else {
+                                        echo "<script>alert('$returned_message');</script>";
+                                    }
                                 }
                             }
                         ?>

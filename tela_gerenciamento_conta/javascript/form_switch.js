@@ -2,23 +2,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const formDesktop = document.getElementById('pessoal_desktop');
     const formMobile = document.getElementById('pessoal_mobile');
     const mainElement = document.querySelector('main');
+    const labelDelete = document.querySelector('.label_delete');
 
     function switchForms() {
         if (window.innerWidth <= 675) {
-            // Remove o formulário desktop e adiciona o mobile
             if (formDesktop.parentNode) {
                 formDesktop.remove();
             }
             if (!formMobile.parentNode) {
-                mainElement.insertBefore(formMobile, document.getElementById('form_login'));
+                mainElement.insertBefore(formMobile, labelDelete);
             }
         } else {
-            // Remove o formulário mobile e adiciona o desktop
             if (formMobile.parentNode) {
                 formMobile.remove();
             }
             if (!formDesktop.parentNode) {
-                mainElement.insertBefore(formDesktop, document.getElementById('form_login'));
+                mainElement.insertBefore(formDesktop, labelDelete);
             }
         }
     }
