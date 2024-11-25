@@ -128,6 +128,6 @@
 </body>
 
 <script src="registrar.js"></script>
-<script src="validar_email.js"></script>
+<script src="js/validar-email.js"></script>
 <script src="menu-mobile.js"></script>
 </html>

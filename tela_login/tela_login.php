@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <li><a class="active" href="../tela_nossa_casa/tela_nossa_casa.html">Nossa casa</a></li>
                         <li><a class="active" href="../tela_servicos/tela_servicos.html">Serviços</a></li>
                         <li><a class="active" href="../tela_contatos/tela_contatos.html">Contato</a></li>
-                        <li><a class="active" href="tela_login.html">Login</a></li>
+                        <li><a class="active" href="tela_login.php">Entrar</a></li>
                     </ul>
                 </nav>
             </div>
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <li><a href="../tela_nossa_casa/tela_nossa_casa.html">Nossa casa</a></li>
                     <li><a href="../tela_servicos/tela_servicos.html">Serviços</a></li>
                     <li><a href="../tela_contatos/tela_contatos.html">Contato</a></li>
-                    <li><a href="tela_login.html">Login</a></li>
+                    <li><a href="tela_login.php">Entrar</a></li>
                 </ul>
             </nav>
         </div>
