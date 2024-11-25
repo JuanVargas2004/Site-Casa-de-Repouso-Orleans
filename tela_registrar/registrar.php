@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="shortcut icon" href="../logo.ico/favicon-16x16.png" type="image/x-icon">
 
@@ -124,5 +124,7 @@
 
   </footer>
 </body>
-
+<script src="registrar.js"></script>
+<script src="validar_email.js"></script>
+<script src="menu-mobile.js"></script>
 </html>
