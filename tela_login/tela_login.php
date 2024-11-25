@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <div class="container-link">
         <p>CLIQUE ABAIXO E Venha fazer estágio conosco</p>
-        <a href="#"> aplicação de estágio </a>
+        <a href="../tela_estagio/estagio.php"> aplicação de estágio </a>
     </div>
       
     <div class="container-link">
