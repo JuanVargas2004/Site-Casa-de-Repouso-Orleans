@@ -246,7 +246,7 @@ main h1 strong{
     margin-bottom: 20px; 
 }
 
-#confirmar {
+.returned_output {
     text-align: center;
     width: 100%;
     font-family: "Marcellus";
@@ -396,6 +396,17 @@ main h1 strong{
 
 .menu_container nav ul li{
     margin-bottom: 30px;
+}
+
+
+#return_form_true{
+    margin-top: 20px;
+    color: #909983;
+}
+
+#return_form_false{
+    margin-top: 20px;
+    color: #D14B4B;
 }
 
 #overlay{

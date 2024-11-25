@@ -1,3 +1,114 @@
+<!-- IMPORTANDO BIBLIOTECAS E FAZENDO CONEXÃO COM S3 -->
+
+<?php 
+
+// DotEnv
+require '../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
+
+$awsAccessKeyId = $_ENV['S3_ACCESS_KEY_ID'];
+$awsSecretAccessKey = $_ENV['S3_SECRET_ACCESS_KEY'];
+
+
+
+// AWS LIBRARY
+require '../vendor/autoload.php';
+use Aws\S3\S3Client;
+use Aws\Exception\AwsException;
+
+// Configuração S3
+$s3 = new S3Client([
+    'version' => 'latest',
+    'region' => 'us-east-2',
+    'credentials' => [
+        'key' => $awsAccessKeyId,
+        'secret' => $awsSecretAccessKey,
+    ],
+]);
+
+
+?>
+
+
+<?php 
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    function enviar_formulario(){
+        if ($_POST['action'] == 'enviar_formulario'){
+
+            include "../conexao.php";
+            
+            $nome = $_POST['nome'];
+            $data = $_POST['data'];
+            $tel = $_POST['tel'];
+            $email = $_POST['email'];
+            $cemail = $_POST['cemail'];
+            $arquivo = $_FILES['curriculo'];
+
+
+            if ($nome && $data && $tel && $email && $cemail) {
+
+
+
+                if(isset($arquivo) && $arquivo['error'] == 0){
+                
+                    $nome_arquivo = $email . "_" . $data;
+
+                    try {
+                        global $s3;
+
+                        // Upload do arquivo para o S3
+
+                        $resultado = $s3->putObject([
+                            'Bucket' => 'casaorleans',
+                            'Key' =>  'curriculos/' . $nome_arquivo,
+                            'SourceFile' => $arquivo['tmp_name'],   
+                            'ContentType' => $arquivo['type'],
+                        ]);
+
+                        $cmd = $s3->getCommand('GetObject', [
+                            'Bucket' => 'casaorleans',
+                            'Key' => 'curriculos/' . $nome_arquivo,
+                        ]);
+
+                        $request = $s3->createPresignedRequest($cmd, '+5 minutes');
+                        $url_arquivo = (string) $request->getUri();
+
+                        $sql = "INSERT INTO estagio (nome, data_nascimento, telefone, email, url_curriculo) VALUES (?, ?, ?, ?, ?)";
+                        $smt = $conn->prepare($sql);
+                        $smt->bind_param("sssss", $nome, $data, $tel, $email, $url_arquivo);
+
+                        if ($smt->execute()){
+                            return true;
+                        } else {
+                            return "Error: " . $conn->error;
+                        }
+
+                    } catch (AwsException $e) {
+                        return "Erro ao salvar o arquivo: " . $e->getMessage();
+                    }
+                
+                }
+            }
+
+        }
+        $smt->close();
+        $conn->close();
+
+
+
+    }
+
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -60,8 +171,9 @@
 
         <h1>VENHA FAZER <strong>ESTÁGIO</strong> CONOSCO</h1>
 
-        <form action="index.php" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data">
 
+            <input type="hidden" name="action" value="enviar_formulario">
 
             <div id="form">
 
@@ -95,7 +207,7 @@
                     <input type="email" name="cemail" id="cemail" class="input" required>
                 </div>
 
-                <div id="confirmar"></div>
+                <div id="confirmar" class="returned_output"></div>
 
 
                 <div class="campo">
@@ -125,6 +237,16 @@
 
 
                 <input type="submit" value="Concluir" id="button" onclick="return validarFormulario()">
+
+                <?php 
+                    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                        if (enviar_formulario()){
+                            echo "<div class='returned_output' id='return_form_true'>Formulário enviado com sucesso!</div>";
+                        } else {
+                            echo "<div class='returned_output' id='return_form_false'>Formulário não enviado!</div>";
+                        }
+                    }
+                ?>
 
                 
             </div>

@@ -44,48 +44,39 @@ $conn->close();
 <body>
 
 <header id="header">
-    <div class="container">
-        <div class="flex">
-            <a href="../tela_inicial/tela_inicial.html" class="a_home"><img src="midia/logo.png" alt="imagem de arvore da logo" id="logo"></a>
-            <nav class="menu_nav">
-                <ul>
-                    <li><a class="active" href="../tela_nossa_casa/tela_nossa_casa.html">Nossa casa</a></li>
-                    <li><a class="active" href="../tela_servicos/tela_servicos.html">Serviços</a></li>
-                    <li><a class="active" href="../tela_contatos/tela_contatos.html">Contato</a></li>
-                    <li><a href="tela_logado.php"><img src="midia/gerenciamento-de-usuarios-1.png" alt="beaba" class="img-menu"></a></li>
-                    <div id="maker"></div>
-                </ul>
-            </nav>
-        </div>
+        <div class="container">
 
-        <div class="btn-abrir_menu" id="btn-menu">
-            <i> <img src="midia/icone-menu.png" alt="" /></i>
-        </div>
+            <div class="flex">
 
-        <div class="menu-mobile" id="menu-mobile">
-            <div class="btn-fechar">
-                <i> <img src="midia/icone_close.png" alt="" /></i>
+                <a href="../tela_inicial/tela_inicial.html"><img src="midia/logo.png" alt="Logo" id="logo"></a>
+
+                <nav id="navdesktop">
+                    <ul id="navbar">
+                        <li><a href="#" class="navitem">Quem Somos</a></li>
+                        <li><a href="../tela_nossa_casa/tela_nossa_casa.html" class="navitem">Nossa Casa</a></li>
+                        <li><a href="../tela_servicos/tela_servicos.html" class="navitem">Serviços</a></li>
+                        <li><a href="../tela_contatos/tela_contatos.html" class="navitem">Contato</a></li>
+                        <li><a href="../tela_login/tela_login.php" class="navitem"><img src="midia/manager.png" id="manager"></a></li>
+                    </ul>
+                </nav>
+
+                <div id="navmobile">
+                    <input type="radio" name="hamburguer" id="abrir">
+                    <input type="radio" name="hamburguer" id="fechar" checked>
+                    <label for="abrir" id="label_hamburguer"><img src="midia/icone-menu.png" id="img_hamburguer"></label>
+                </div>
+
             </div>
 
-            <nav id="nav">
-                <ul>
-                    <li><a href="../tela_nossa_casa/tela_nossa_casa.html">Nossa casa</a></li>
-                    <li><a href="../tela_servicos/tela_servicos.html">Serviços</a></li>
-                    <li><a href="../tela_contatos/tela_contatos.html">Contato</a></li>
-                    <li><a href="tela_logado.php"><img src="midia/gerenciamento-de-usuarios-1.png" alt="beaba" class="img-menu"></a></li>
-                </ul>
-            </nav>
         </div>
-        <div class="overlay-menu" id="overlay-menu"></div>
-    </div>
-</header>
+    </header>
 
 <!-- INICIO CONTEUDO PRINCIPAL -->
 <main>
     <h1 class="title-forms">Seja bem-vindo(a) <br><span><?php echo $_SESSION['nome']; ?></span></h1>
 
     <div class="container-content">
-      <a href="#">
+      <a href="../tela_gerenciamento_conta/gerenciamento.php">
         <img src="midia/icone-do-main.png" alt="icone do conteudo principal">
         <div class="texto">
           <h2>GERENCIE SEUS DADOS</h2>
@@ -123,7 +114,9 @@ $conn->close();
     </div>
 </footer>
 
-<script src="menu-mobile.js" defer></script>
-<script src="voltar-topo.js" defer></script>
+<!-- <script src="menu-mobile.js" defer></script> -->
+<!-- <script src="voltar-topo.js" defer></script> -->
+<script src="js/menu.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
