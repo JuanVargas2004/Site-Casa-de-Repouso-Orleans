@@ -9,7 +9,7 @@ $dotenv->load();
 
 $awsAccessKeyId = $_ENV['S3_ACCESS_KEY_ID'];
 $awsSecretAccessKey = $_ENV['S3_SECRET_ACCESS_KEY'];
-
+$base_url = $_ENV['BASE_URL'];
 
 
 // AWS LIBRARY
@@ -17,7 +17,6 @@ require '../vendor/autoload.php';
 use Aws\S3\S3Client;
 use Aws\Exception\AwsException;
 
-// Configuração S3
 $s3 = new S3Client([
     'version' => 'latest',
     'region' => 'us-east-2',
@@ -59,23 +58,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
                     try {
                         global $s3;
+                        global $base_url;
 
                         // Upload do arquivo para o S3
 
-                        $resultado = $s3->putObject([
+                        $s3->putObject([
                             'Bucket' => 'casaorleans',
                             'Key' =>  'curriculos/' . $nome_arquivo,
                             'SourceFile' => $arquivo['tmp_name'],   
                             'ContentType' => $arquivo['type'],
                         ]);
 
-                        $cmd = $s3->getCommand('GetObject', [
-                            'Bucket' => 'casaorleans',
-                            'Key' => 'curriculos/' . $nome_arquivo,
-                        ]);
-
-                        $request = $s3->createPresignedRequest($cmd, '+5 minutes');
-                        $url_arquivo = (string) $request->getUri();
+                        $email_sem_arroba = str_replace("@", "%40", $email);
+                        $url_arquivo = $base_url . '/' . $email_sem_arroba . "_" . $data;
 
                         $sql = "INSERT INTO estagio (nome, data_nascimento, telefone, email, url_curriculo) VALUES (?, ?, ?, ?, ?)";
                         $smt = $conn->prepare($sql);
@@ -130,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li><a href="../tela_nossa_casa/tela_nossa_casa.html">Nossa Casa</a></li>
                 <li><a href="../tela_servicos/tela_servicos.html">Serviços</a></li>
                 <li><a href="../tela_contatos/tela_contatos.html">Contato</a></li>
-                <li><a href="../tela_login/tela_login.html">Entrar</a></li>
+                <li><a href="../tela_login/tela_login.php">Entrar</a></li>
             </ul>
         </nav>
 
@@ -152,7 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         <li><a href="../tela_nossa_casa/tela_nossa_casa.html" class="navitem">Nossa Casa</a></li>
                         <li><a href="../tela_servicos/tela_servicos.html" class="navitem">Serviços</a></li>
                         <li><a href="../tela_contatos/tela_contatos.html" class="navitem">Contato</a></li>
-                        <li><a href="../tela_login/tela_login.html" class="navitem">Entrar</a></li>
+                        <li><a href="../tela_login/tela_login.php" class="navitem">Entrar</a></li>
                     </ul>
                 </nav>
 
