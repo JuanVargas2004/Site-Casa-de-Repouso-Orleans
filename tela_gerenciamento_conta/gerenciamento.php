@@ -69,9 +69,6 @@ if (!isset($_SESSION['user_id'])) {
                             $_SESSION['email'] = $email;
                         }
                     }
-
-                    $smt->close();
-                    $conn->close();
                     return true;
 
                 } catch (Exception $e){
