@@ -1,0 +1,232 @@
+/* Fonte existente no seu código */
+@font-face {
+    font-family: 'Marcellus';
+    src: url('../fonts/Marcellus-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Libre';
+    src: url('../fonts/LibreBodoni-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LibreBask';
+    src: url('../fonts/LibreBaskerville-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Alef';
+    src: url('../fonts/Alef-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PlayFair';
+    src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+}
+
+/* Reseta margens e paddings e define rolagem suave */
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* SEÇÃO HEADER */
+header .container {
+    display: flex;
+    margin: 0;
+    height: 16vh;
+}
+
+header .flex {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    transition: .5s;
+    background-image: url(midia/header-v.png);
+    background-position-y: 36%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header .container img {
+    margin-left: 6vw;
+    transition: transform 0.3s;
+    width: 30%;
+    filter: drop-shadow(3px 6px 5px rgba(0, 0, 0, 0.219));
+}
+
+header.rolagem {
+    background-color: rgba(58, 207, 58, 0.514);
+    height: 75px;
+    display: flex;
+    align-items: center;
+    background-color: #7b994fde;
+    padding: 0;
+}
+
+header .container img:hover {
+    transform: scale(1.2);
+}
+
+/* Barra de navegação */
+#navbar {
+    margin-right: 4vw;
+    transition: transform .5s;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 1vw 0;
+}
+
+header ul li a {
+    font-family: 'PlayFair';
+    font-weight: normal;
+    font-size: clamp(1rem, 1.2vw + 0.1rem, 3rem);
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .5s ease, font-size .5s ease;
+}
+
+header ul li a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+header ul li a:active {
+    color: rgb(197, 197, 197);
+}
+
+/* SEÇÃO MAIN */
+main {
+    margin: 20px auto;
+    width: 90vw;
+}
+
+main h1 {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    font-family: 'Marcellus';
+    font-weight: lighter;
+    font-size: clamp(1.375rem, 2.77vw + 0.1rem, 2.75rem);
+    text-align: center;
+}
+
+main img {
+    width: 37.5vw;
+}
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Seção de Relatórios */
+.report-section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-section h2 {
+    font-size: 24px;
+    color: #5a885a;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.report-section p {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.report-item {
+    margin-bottom: 20px;
+}
+
+.report-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.data-btn {
+    background-color: #d3e7d3;
+    color: #333;
+}
+
+.download-btn {
+    background-color: #5a885a;
+    color: #fff;
+}
+
+/* Modo responsivo */
+@media screen and (max-width: 767px) {
+    #desktop {
+        display: none;
+    }
+
+    #navdesktop {
+        display: none;
+    }
+
+    header .container {
+        height: 12vh;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #navmobile {
+        display: none;
+    }
+
+    .menu_container {
+        display: none;
+    }
+
+    #menu_flutuante {
+        display: none;
+    }
+
+    #overlay {
+        display: none;
+    }
+}
