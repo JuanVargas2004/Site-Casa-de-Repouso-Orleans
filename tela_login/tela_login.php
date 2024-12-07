@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form action="" method="post" class="form">    
             <input type="email" id="email" name="email" placeholder="E-mail" required />
             <input type="password" id="senha" name="senha" placeholder="Senha" required />
-            <a href="#">Esqueci minha senha</a>
+            <!-- <a href="#">Esqueci minha senha</a> -->
             <input type="submit" id="submit" value="ENTRAR">
         </form>
 

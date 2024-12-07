@@ -86,7 +86,7 @@ $conn->close();
     </div>
 
     <div class="container-content">
-      <a href="#">
+      <a href="../tela_relatorio/tela_relatorio.php">
         <img src="midia/icone-do-main.png" alt="icone do conteudo principal">
         <div class="texto2">
           <h2>GERAR RELATORIO</h2>
